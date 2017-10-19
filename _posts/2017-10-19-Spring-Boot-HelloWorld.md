@@ -80,6 +80,18 @@ public class HelloController {
     }
 }
 ```
+
+### 编写主程序
+
+```
+@SpringBootApplication
+public class Server {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Server.class, args);
+    }
+}
+```
 > 启动主程序，打开浏览器访问http://localhost:8080/hello，可以看到页面输出Hello World
 
 ### 编写单元测试用例
