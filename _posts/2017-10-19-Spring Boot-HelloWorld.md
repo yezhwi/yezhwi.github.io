@@ -1,15 +1,13 @@
 ---
 layout:     post
-title:      GCD 在 Swift 中的用法
+title:      Spring Boot 快速入门（HelloWorld）
 subtitle:   
-date:       2017-10-04
-author:     BY
+date:       2017-10-19
+author:     Yezhiwei
 header-img: img/home-bg-art.jpg
 catalog: true
 tags:
-    - iOS
-    - Swift
-    - GCD
+    - Spring Boot
 ---
 
 
