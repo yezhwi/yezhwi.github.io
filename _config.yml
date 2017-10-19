@@ -2,7 +2,7 @@
 title: Yezhiwei Blog
 SEOTitle: Yezhiwei的博客 | Yezhiwei Blog
 header-img: img/post-bg-desk.jpg
-email: qiubaiying@gmail.com
+# email: qiubaiying@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Yezhiwei, Yezhiwei Blog, 柏荧的博客, Yezhiwei, Java, Spring"
 url: "http://yezhwi.github.io"          # your host, for absolute URL
@@ -18,7 +18,7 @@ sidebar-avatar: /img/qrcode_for_gh_b10c7e3ec75e_430.jpg     # use absolute URL, 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
+ weibo_username:     yezhwi
 # zhihu_username:     qiubaiying
 github_username:    yezhwi
 #facebook_username:  baiying.qiu.7
@@ -94,9 +94,6 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "WY",
-        href: "http://zhengwuyang.com"
-    },{
         title: "简书·BY",
         href: "http://www.jianshu.com/u/e71990ada2fd"
     },{
