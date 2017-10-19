@@ -11,84 +11,86 @@ tags:
 ---
 
 
-## DispatchQueue
+## Spring Boot的主要优点
 
-Swift 中，对 GCD 语法进行了彻底改写。引入了 `DispatchQueue` 这个类。
+1. 为所有Spring开发者更快的入门
+2. 开箱即用，提供各种默认配置来简化项目配置
+3. 内嵌式容器简化Web项目
+4. 没有冗余代码生成和XML配置的要求
 
-先来看看在一个异步队列中读取数据， 然后再返回主线程更新 UI， 这种操作在新的 Swift 语法中是这样的：
+## 快速入门
 
-```swift
-DispatchQueue.global().async {
+目标:完成Spring Boot基础项目的构建，并且实现一个简单的Http请求处理
 
-    DispatchQueue.main.async {
+1. 使用Maven构建项目或http://start.spring.io/向导构建项目
+	
+2. 项目结构
+3. 引入Web模块
 
-		// 更新UI操作
+> 当前的pom.xml内容如下，仅引入了两个模块：
+> 
+*  spring-boot-starter：核心模块，包括自动配置支持、日志和YAML
+> 
+*  spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito
 
+```
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+</dependencies>
+```
+> 引入Web模块，需添加spring-boot-starter-web模块：
+
+```
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+
+4. 编写HelloWorld服务
+
+```
+@RestController
+public class HelloController {
+    @RequestMapping("/hello")
+    public String index() {
+        return "Hello World";
     }
-
-}
-
-```
-
-`DispatchQueue.global().async` 相当于使用全局队列进行异步操作。然后在调用 `DispatchQueue.main.async` 使用主线程更新相应的 UI 内容。
-
-## 优先级
-
-新的 GCD 引入了 QoS (Quality of Service) 的概念。
-
-先看看下面的代码：
-
-```swift
-DispatchQueue.global(qos: .userInitiated).async {
-
-}
-
-```
-
-
-QoS 对应的就是 `Global Queue` 中的优先级。 其优先级由最低的 `background` 到最高的 `userInteractive` 共五个，还有一个未定义的 `unspecified`。
-
-```swift
-public static let background: DispatchQoS
-
-public static let utility: DispatchQoS
-
-public static let `default`: DispatchQoS
-
-public static let userInitiated: DispatchQoS
-
-public static let userInteractive: DispatchQoS
-
-public static let unspecified: DispatchQoS
-```
-
-## 自定义 Queue
-
-除了直接使用 `DispatchQueue.global().async` 这种封装好的代码外，还可以通过`DispatchWorkItem` 自定义队列的优先级，特性：
-
-```swift
-let queue = DispatchQueue(label: "swift_queue")
-let dispatchworkItem = DispatchWorkItem(qos: .userInitiated, flags: .inheritQoS) {
-    
-}
-queue.async(execute: dispatchworkItem)
-
-```
-## GCD定时器
-
-Swift 中 `dispatch_time`的用法改成了：
-
-```swift
-let delay = DispatchTime.now() + .seconds(60)
-DispatchQueue.main.asyncAfter(deadline: delay) { 
-    
 }
 ```
+> 启动主程序，打开浏览器访问http://localhost:8080/hello，可以看到页面输出Hello World
 
-相较与OC来说更易读了：
+5. 编写单元测试用例
 
-```objc
-let dispatch_time = dispatch_time(DISPATCH_TIME_NOW, Int64(60 * NSEC_PER_SEC))
+> 下面编写一个简单的单元测试来模拟http请求，具体如下：
+
 ```
+import static org.hamcrest.Matchers.equalTo;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-- 参考 [GCD 在 Swift 3 中的玩儿法](https://www.swiftcafe.io/2016/10/16/swift-gcd/)
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = MockServletContext.class)
+@WebAppConfiguration
+public class ApplicationTests {
+	private MockMvc mvc;
+	@Before
+	public void setUp() throws Exception {
+		mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
+	}
+	@Test
+	public void getHello() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(content().string(equalTo("Hello World")));
+	}
+}
+```
