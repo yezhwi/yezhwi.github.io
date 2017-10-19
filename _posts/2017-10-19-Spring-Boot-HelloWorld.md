@@ -13,19 +13,33 @@ tags:
 
 ## Spring Boot的主要优点
 
-1. 为所有Spring开发者更快的入门
-2. 开箱即用，提供各种默认配置来简化项目配置
-3. 内嵌式容器简化Web项目
-4. 没有冗余代码生成和XML配置的要求
+1. 开箱即用，提供各种默认配置
+2. 内嵌式容器简化Web项目
+3. 没有冗余代码和XML配置的要求
 
 ## 快速入门
 
-目标:完成Spring Boot基础项目的构建，并且实现一个简单的Http请求处理
+目标：完成Spring Boot基础项目的构建，并且实现一个简单的Http请求处理
 
-1. 使用Maven构建项目或http://start.spring.io/向导构建项目
+### 使用Maven构建项目或http://start.spring.io/向导构建项目
+
+> 略
 	
-2. 项目结构
-3. 引入Web模块
+### 项目结构
+
+```
+src
+	main
+		java
+			com.xxx.controller
+				HelloController
+		resources
+	test
+		java
+		resources
+```
+
+### 引入Web模块
 
 > 当前的pom.xml内容如下，仅引入了两个模块：
 > 
@@ -55,7 +69,7 @@ tags:
 </dependency>
 ```
 
-4. 编写HelloWorld服务
+### 编写HelloWorld服务
 
 ```
 @RestController
@@ -68,7 +82,7 @@ public class HelloController {
 ```
 > 启动主程序，打开浏览器访问http://localhost:8080/hello，可以看到页面输出Hello World
 
-5. 编写单元测试用例
+### 编写单元测试用例
 
 > 下面编写一个简单的单元测试来模拟http请求，具体如下：
 
@@ -82,10 +96,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebAppConfiguration
 public class ApplicationTests {
 	private MockMvc mvc;
+	
 	@Before
 	public void setUp() throws Exception {
 		mvc = MockMvcBuilders.standaloneSetup(new HelloController()).build();
 	}
+	
 	@Test
 	public void getHello() throws Exception {
 		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON))
