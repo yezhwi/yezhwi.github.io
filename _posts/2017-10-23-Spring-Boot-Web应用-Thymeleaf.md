@@ -140,4 +140,4 @@ spring.thymeleaf.view-names=
 
 同时希望自己能坚持总结下去，未来能把下面这张图上的内容总结完。
 
-![Spring Cloud组件架构](img/spring-cloud.jpg)
+![Spring Cloud组件架构](/img/spring-cloud.jpg)
