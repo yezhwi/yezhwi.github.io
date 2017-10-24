@@ -4,7 +4,7 @@ title:      Spring Boot 工程结构
 subtitle:   项目定义级包结构
 date:       2017-10-24
 author:     Yezhiwei
-header-img: img/home-bg-art.jpg
+header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:
     - Spring Boot
