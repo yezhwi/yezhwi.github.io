@@ -4,7 +4,7 @@ title:      Spring Boot 快速入门（HelloWorld）
 subtitle:   
 date:       2017-10-19
 author:     Yezhiwei
-header-img: img/home-bg-art.jpg
+header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:
     - Spring Boot

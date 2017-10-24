@@ -4,7 +4,7 @@ title:      Spring Boot Web应用
 subtitle:   Thymeleaf介绍及使用
 date:       2017-10-23
 author:     Yezhiwei
-header-img: img/home-bg-art.jpg
+header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:
     - Spring Boot
