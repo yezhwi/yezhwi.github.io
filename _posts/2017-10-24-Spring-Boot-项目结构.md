@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Spring Boot 工程结构
-subtitle:   项目定义及包结构
+subtitle:   规范——项目定义级包结构
 date:       2017-10-24
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
@@ -29,12 +29,12 @@ SpringBoot提供了很多基础设施，在创建生产中的独立程序上非�
 
 如果仅提供http协议，并且不考虑调用方的感受（调用方自己将json转成对象），可以使用下面的示例
 
-* root package结构：com.example.myproject
+* root package结构：com.example.myproject，根目录+模块名称
 * 应用主类Application.java置于root package下，可以帮助程序减少手工配置来加载Spring的内容
-* 实体（Entity）置于com.example.myproject.domain(或model)包下
+* 实体（Entity）置于com.example.myproject.domain(或model)包下，每一张表对应一个Entity
 * 数据访问层（Repository）置于com.example.myproject.repository包下
 * 逻辑层（Service）置于com.example.myproject.service包下
-* Web层（web）置于com.example.myproject.web包下
+* Web层（web）置于com.example.myproject.web包下，提供RESTful API
 
 ```
 com
@@ -56,7 +56,7 @@ com
       |
 ```
 
-上面的方式还需要约定HTTP协议对资源操作的RESTful API
+上面的方式还需要约定HTTP协议对资源操作的RESTful API，另一个问题是当产品需要返回的内容比Entity的内容多或少时，怎么提供给前端工程师呢？（如果多的话，通过使用@Transient扩展Entity中和DB里对应不到的字段。少，怎么办？）
 
 ***
 
@@ -72,35 +72,55 @@ user-service
 
 为什么要分为core、service呢？
 
-从两者的作用上来看，core主要是model、接口、常量，被service依赖，被使用方依赖，同时考虑到了使用方的感觉哈；service主要是对接口的实现，以及对外提供多种RPC协议的服务。
+从两者的作用上来看，core主要是model、接口、常量，被service依赖，被使用方依赖，同时考虑到了使用方的感受哈；service主要是对接口的实现，以及对外提供多种RPC协议的服务。
 
-### core推荐的工程结构
+### core推荐的工程结构(user-core)
 
 代码层的结构
 
-根目录：com.gemantic.user
+根目录+模块名：com.gemantic.user
 
 实体类(domain)置于com.gemantic.user.domain，主要是与数据库的对应关系
 
-1. 实体类(domain)置于com.gemantic.user.domain
-3. 数据访问层(Dao)置于com.gemantic.user.repository
-4. 数据服务层(Service)置于com.gemantic.user.service
-5. 常量接口类(consist)置于com.gemantic.user.consist
-6. 数据传输类(vo)置于com.gemantic.user.vo
+1. 实体类(domain)置于com.gemantic.user.domain(或model)包下，每一张表对应一个Entity
+2. 数据访问层(Dao)置于com.gemantic.user.repository
+3. 数据服务层(Service)置于com.gemantic.user.service
+4. 常量接口类(consist)置于com.gemantic.user.constant，包下是常量或枚举类型
 
-### service推荐的工程结构
+### service推荐的工程结构(user-service)
 
 代码层的结构
 
-根目录：com.gemantic.user
+根目录+模块名：com.gemantic.user 
 
 1. 工程启动类(ApplicationServer.java)置于com.gemantic.user包下
 2. 数据服务的实现接口(serviceImpl)至于com.gemantic.user.service.impl
 3. 前端控制器(Controller)置于com.gemantic.user.controller
 4. 工具类(utils)置于com.gemantic.user.utils
 5. 配置信息类(config)置于com.gemantic.user.config
+6. 数据传输类(vo)置于com.gemantic.user.vo，为前端准备数据的json对象
+
+
+### 公共项目commons-core
+
+可以把多个项目公共的代码抽取utils包下
+
+```
+com
+  +- example
+    +- common
+      +- util
+	      |
+	      +- ftp
+	      |  +- FtpUtil.java
+	      |
+	      +- fastdfs
+	      |  +- FastdfsUtil.java
+	      |
+	      ...
+```
 
 ***
 
-之后再总结一下，RESTful API、微服务带来的问题
+之后再总结一下，RESTful API、微服务带来的问题(超时问题、多方调用一致性问题--临时表状态解决)
 
