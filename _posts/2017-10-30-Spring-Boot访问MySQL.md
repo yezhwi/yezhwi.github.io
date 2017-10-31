@@ -298,7 +298,7 @@ public class UserDaoTest {
 
     @Test
     public void testInsertUser() throws Exception {
-		// 测试逻辑
+        // 测试逻辑
         int result = userDao.insertUser("Yezhiwei", "123456", "11111227346");
         System.out.println(result);
 
@@ -306,7 +306,7 @@ public class UserDaoTest {
 
     @Test
     public void testInsertUserWithBackId() throws Exception {
-		// 测试逻辑
+        // 测试逻辑
         User user = new User();
         user.setUserName("Yess");
         user.setPassword("123");
