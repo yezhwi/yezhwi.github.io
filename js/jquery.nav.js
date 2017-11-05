@@ -35,7 +35,7 @@
 	// the plugin prototype
 	OnePageNav.prototype = {
 		defaults: {
-			navItems: 'SpringBoot, StringCloud',
+			navItems: 'a',
 			currentClass: 'current',
 			changeHash: false,
 			easing: 'swing',
