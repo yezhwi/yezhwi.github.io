@@ -4,6 +4,7 @@ title:      SpringCloud初探
 subtitle:   SpringCloud全家桶
 date:       2017-11-05
 author:     Yezhiwei
+category:   springcloud
 header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:

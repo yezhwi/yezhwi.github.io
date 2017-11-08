@@ -4,6 +4,7 @@ title:      SpringCloud服务调用
 subtitle:   服务调用Ribbon
 date:       2017-11-08
 author:     Yezhiwei
+category:   springcloud
 header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:

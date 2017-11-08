@@ -4,6 +4,7 @@ title:      SpringCloud基础服务注册中心Eureka
 subtitle:   基础服务注册中心Eureka
 date:       2017-11-06
 author:     Yezhiwei
+category:   springcloud
 header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:
