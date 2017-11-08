@@ -52,13 +52,16 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-pages:
-  -
-    url: /spring-boot
-    title: Spring-Boot
-  -
-    url: /spring-cloud
-    title: Spring-Cloud
+pages:[
+    {
+        title: "Spring-Boot",
+        href: "/spring-boot"
+    },{
+        title: "Spring-Cloud",
+        href: "/spring-cloud"
+    }
+]
+
 
 # 评论系统
 # Disqus settings（https://disqus.com/）
