@@ -52,7 +52,7 @@ highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
 
-pages:[
+pages: [
     {
         title: "Spring-Boot",
         href: "/spring-boot"
