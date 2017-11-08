@@ -54,17 +54,6 @@ kramdown:
 
 
 
-pages: [
-    {
-        title: "Spring-Boot",
-        url: "/spring-boot"
-    },{
-        title: "Spring-Cloud",
-        url: "/spring-cloud"
-    }
-]
-
-
 # 评论系统
 # Disqus settings（https://disqus.com/）
 disqus_username: qiubaiying
