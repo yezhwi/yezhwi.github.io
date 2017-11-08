@@ -13,7 +13,7 @@ tags:
 
 ## 什么是SpringCloud？
 
-Spring Cloud是一系列框架的有序集合，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架（服务发现注册、配置中心、消息总线、负载均衡、断路器、智能路由、数据监控等）组合起来，通过Spring Boot进行再封装屏蔽掉了复杂的配置，巧妙地简化了分布式系统基础设施的开发，最终给我们一套简单易懂、易部署和易维护的分布式系统开发利器，做到一键启动和部署。
+Spring Cloud是一系列框架的有序集合，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架（服务发现注册、配置中心、消息总线、负载均衡、断路器、智能路由、数据监控、分布式会话和集群状态管理等）组合起来，通过Spring Boot进行再封装屏蔽掉了复杂的配置，巧妙地简化了分布式系统基础设施的开发，最终给我们一套简单易懂、易部署和易维护的分布式系统开发利器，做到一键启动和部署。
 
 Spring Cloud包含了多个子项目（针对分布式系统中涉及的多个不同开源产品），比如：Spring Cloud Config、Spring Cloud Netflix、Spring Cloud CloudFoundry、Spring Cloud AWS、Spring Cloud Security、Spring Cloud Commons、Spring Cloud Zookeeper、Spring Cloud CLI等项目。
 
@@ -21,9 +21,15 @@ Spring Cloud包含了多个子项目（针对分布式系统中涉及的多个�
 
 ## 微服务架构
 
-简单的说，微服务架构就是将一个完整的应用从数据存储开始垂直拆分成多个不同的服务，每个服务都能独立部署、独立维护、独立扩展、独立访问（或者有独立的数据库）的服务单元，服务与服务间通过诸如RESTful API的方式互相调用。
+简单的说，微服务架构就是将一个完整的应用从数据存储开始垂直拆分成多个不同的服务，每个服务都能独立部署、独立维护、独立扩展、独立访问（或者有独立的数据库）的服务单元，服务与服务间通过诸如RESTful API或Feign Service的方式互相调用。
 
-关于微服务架构相关的产品社区也变得越来越活跃（比如：Netflix、Dubbo、Kubernetes），Spring Cloud Netflix与各种Netflix OSS组件集成，组成微服务的核心，主要有Eureka, Hystrix, Zuul, Archaius… ；Dubbo是国内。。。。。。
+关于微服务架构相关的产品社区也变得越来越活跃（比如：Netflix、Dubbo、Kubernetes），Spring Cloud Netflix与各种Netflix OSS组件集成，组成微服务的核心，主要有Eureka, Hystrix, Zuul, Archaius… ；
+
+Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色，并且方便与Spring集成。它是国内公司用的比较多的高性能的分布式RPC框架。
+
+> Dubbo |ˈdʌbəʊ| is a high-performance, java based RPC framework open-sourced by Alibaba. As in many RPC systems, dubbo is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types. On the server side, the server implements this interface and runs a dubbo server to handle client calls. On the client side, the client has a stub that provides the same methods as the server.
+
+Kubernetes是一个开源系统，用来自动部署、缩放和管理容器应用。它可以使用多语言并且提供原语服务开通、运行、缩放和分布式系统管理。它提供的服务，例如配置管理、服务发现、负载均衡、指标收集和日志聚集，都通过各种各样的语言来实现。
 
 
 ### Spring Cloud Netflix
@@ -32,7 +38,7 @@ Spring Cloud包含了多个子项目（针对分布式系统中涉及的多个�
 
 服务中心，服务注册与发现，一个基于 REST 的服务，用于定位服务，以实现服务发现和故障转移。它提供了完整的Service Registry和Service Discovery实现，也是Spring Cloud体系中最重要最核心的组件之一。
 
-在服务调用之间增加一层，实现服务间的调用解耦，管理着服务提供者的生命周期，为消费者提供可用的服务，任何一个项目的改动，不会牵连好几个项目跟着重启。通过服务中心来获取服务，我们不需要关注调用的项目IP地址、由几台服务器提供服务，每次直接去服务中心获取可以使用的服务去调用既可。因此，我们不再关心服务端是否为集群、服务端IP或端口变化，我们只需要将Server端当做一个服务注册到Eureka中，Client端去Eureka中去获取配置中心Server端的服务既可。
+在服务调用之间增加一层，实现服务间的调用解耦，管理着服务提供者的生命周期，为消费者提供可用的服务，任何一个服务提供者的改动，不会牵连此服务的消费者跟着重启。服务之间通过服务中心来获取服务，我们不需要关注调用的服务IP地址、由几台服务器组成集群向外提供服务，每次直接去服务中心获取可以使用的服务去调用既可。因此，我们不再关心服务端是否为集群、服务端IP或端口变化，我们只需要将Server端的服务注册到Eureka中，Client端去Eureka中去获取配置中心Server端的服务既可。
 
 由于各种服务都注册到了服务中心，那么我们就会想到：几台服务提供相同服务怎么来做均衡负载？怎么监控服务器调用成功率？什么是熔断？如何移除服务列表中的故障点？如何（监控服务调用时间）对不同的服务器设置不同的权重等等？ 
 
