@@ -4,11 +4,10 @@ description: "平时多流汗，战时少流血！"
 ---
 
 {% for post in paginator.posts %}
-{{ post.category }}|{{ post.author }}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">
-            {{ post.title }}
+            {{ post.title }} |{{ post.category }}|{{ post.author }}
         </h2>
         {% if post.subtitle %}
         <h3 class="post-subtitle">
