@@ -4,8 +4,7 @@ title: SpringBoot
 description: "平时多流汗，战时少流血！"
 ---
 
-xxxx
-{% for post in paginator.posts %}
+{% for post in site.posts %}
     {% if post.category=='springboot' %}
     <div class="post-preview xxx">
         <a href="{{ post.url | prepend: site.baseurl }}">

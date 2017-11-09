@@ -2,10 +2,9 @@
 layout: page
 title: SpringCloud
 description: "平时多流汗，战时少流血！"
-permalink: /springcloud.html
 ---
 
-{% for post in paginator.posts %}
+{% for post in site.posts %}
     {% if post.category=='springcloud' %}
     <div class="post-preview bbb">
         <a href="{{ post.url | prepend: site.baseurl }}">
