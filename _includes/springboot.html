@@ -1,6 +1,6 @@
 {% for post in paginator.posts %}
-    {% if post.category %}
-    <div class="post-preview">
+    <!-- {% if post.category %} -->
+    <div class="post-preview xxx">
         <a href="{{ post.url | prepend: site.baseurl }}">
             <h2 class="post-title">
                 {{ post.title }}
@@ -19,7 +19,7 @@
         </p>
     </div>
     <hr>
-    {% endif %}
+    <!-- {% endif %} -->
 {% endfor %}
 
 <!-- Pager -->
