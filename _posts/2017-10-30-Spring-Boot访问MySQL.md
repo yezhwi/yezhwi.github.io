@@ -6,8 +6,10 @@ date:       2017-10-30
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
+category: springboot
 tags:
-    - Spring Boot Mybaits
+    - Spring Boot 
+    - Mybaits
 ---
 
 
@@ -113,7 +115,15 @@ public class MybaitsConfig {
 ## 数据库建表SQL
 
 ```
-CREATE TABLE `user` (  `id` bigint(20) NOT NULL AUTO_INCREMENT,  `user_name` varchar(100) DEFAULT NULL,  `password` varchar(100) DEFAULT NULL,  `phone` varchar(100) DEFAULT NULL,  `locked` tinyint(1) DEFAULT '0',  PRIMARY KEY (`id`),  UNIQUE KEY `idx_user_user_name` (`user_name`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+CREATE TABLE `user` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `phone` varchar(100) DEFAULT NULL,
+  `locked` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_user_user_name` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 ```
 
 ## Model

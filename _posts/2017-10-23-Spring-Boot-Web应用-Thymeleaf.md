@@ -6,6 +6,7 @@ date:       2017-10-23
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
+category: springboot
 tags:
     - Spring Boot
 ---

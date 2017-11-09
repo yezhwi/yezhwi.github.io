@@ -7,6 +7,7 @@ author:     Yezhiwei
 category:   springcloud
 header-img: img/WechatIMG38.jpeg
 catalog: true
+category: springcloud
 tags:
     - SpringCloud Eureka Hystrix Zuul Feign Ribbon Turbine
 ---

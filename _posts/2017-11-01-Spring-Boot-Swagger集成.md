@@ -6,8 +6,10 @@ date:       2017-11-01
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
+category: springboot
 tags:
-    - Spring Boot Swagger
+    - Spring Boot 
+    - Swagger
 ---
 
 
