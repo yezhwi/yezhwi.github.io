@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      SpringCloud服务调用
-subtitle:   服务调用Ribbon
+title:      Spring Cloud Ribbon简化负载均衡调用服务端实战
+subtitle:   
 date:       2017-11-08
 author:     Yezhiwei
 category:   springcloud
@@ -9,13 +9,8 @@ header-img: img/WechatIMG38.jpeg
 catalog: true
 category: springcloud
 tags:
-    - SpringCloud 
-    - Eureka 
-    - Hystrix 
-    - Zuul 
-    - Feign 
+    - Spring Cloud  
     - Ribbon 
-    - Turbine
 ---
 
 
