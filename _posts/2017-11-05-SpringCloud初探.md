@@ -8,7 +8,7 @@ category: springcloud
 header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:
-    - SpringCloud 
+    - Spring Cloud 
     - Eureka 
     - Hystrix 
     - Zuul 
@@ -51,7 +51,7 @@ Kubernetes是一个开源系统，用来自动部署、缩放和管理容器应�
 
 #### Netflix Feign
 
-各个微服务都是以HTTP接口的形式暴露自身服务的，因此在调用远程服务时就必须使用HTTP客户端。但是，用起来最方便、最优雅的还是要属Feign了。Feign是一种声明式、模板化的HTTP客户端。在Spring Cloud中使用Feign, 我们可以做到使用HTTP请求远程服务时能与调用本地方法一样的编码体验，完全感知不到这是远程方法，更感知不到这是个HTTP请求，并且与Eureka结合使用，实现透明化的负载均衡。Feign 与 Hystrix结合使用，保护系统的可用性。
+在此之前，各个微服务都是以HTTP接口的形式暴露自身服务的，因此在调用远程服务时就必须使用HTTP客户端，使用起来很不方便，需要了解URL，有时还需要拼装真正请求的URL。有没有一种用起来更方便、更优雅的方式吗？答案是肯定的，Spring Cloud想到了这些————Feign。Spring Cloud Feign是一套基于Netflix Feign实现的声明式服务调用客户端。它使得编写Web服务客户端变得更加简单。在Spring Cloud中使用Feign, 我们只需要通过创建接口并用注解来配置既可完成对Web服务接口的绑定，可以做到使用HTTP请求远程服务时能与调用本地方法一样的编码体验，感知不到这是个HTTP请求，同时还整合了Ribbon和Eureka来提供均衡负载的HTTP客户端实现，实现透明化的负载均衡。
 
 > Feign是一个声明式Web Service客户端。使用Feign能让编写Web Service客户端更加简单, 它的使用方法是定义一个接口，然后在上面添加注解，同时也支持JAX-RS标准的注解。Feign也支持可拔插式的编码器和解码器。Spring Cloud对Feign进行了封装，使其支持了Spring MVC标准注解和HttpMessageConverters。Feign可以与Eureka和Ribbon组合使用以支持负载均衡。
 
