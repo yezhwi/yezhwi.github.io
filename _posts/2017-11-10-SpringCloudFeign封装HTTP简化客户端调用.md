@@ -6,6 +6,7 @@ date:       2017-11-10
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
+category: springcloud
 tags:
     - Spring Cloud
     - Feign
