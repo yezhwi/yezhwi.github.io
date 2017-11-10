@@ -9,7 +9,7 @@ header-img: img/WechatIMG38.jpeg
 catalog: true
 category: springcloud
 tags:
-    - SpringCloud
+    - Spring Cloud
     - Eureka 
     - Hystrix 
     - Zuul 
