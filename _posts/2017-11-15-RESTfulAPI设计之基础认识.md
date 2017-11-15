@@ -2,7 +2,7 @@
 layout:     post
 title:      RESTful API设计基础认识
 subtitle:   
-date:       2017-11-16
+date:       2017-11-15
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
