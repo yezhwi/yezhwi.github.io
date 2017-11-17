@@ -2,12 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
-
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -20,12 +26,272 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;">
+					<script type="text/template">
+						### 目录
+						***
+						#### 1.特点
+						#### 2.幻灯片实现步骤
+						#### 3.幻灯片内容实现方法
+						##### html 实现内容
+						* 标题和正文
+						* 代码
+						* 注释
+
+						##### makddown实现
+						* 外置md文件
+						* 分页实现
+						* 注释
+
+					</script>
+				</section>
+				<section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+					<script type="text/template">
+						### 特点
+						***
+						1.支持标签来区分每一页幻灯片
+
+						2.可以使用markdown来写内容
+
+						3.支持pdf的导出
+
+						4.支持演说注释
+
+						5.提供JavaScript API来控制页面
+
+						6.提供了多个默认主题和切换方式
+
+						---
+
+						### 幻灯片实现步骤
+
+						***
+						1.从reveal.js上下载压缩包，并解压
+
+						2.进入reveal.js文件夹，直接修改index.html文件就可以
+
+						3.编辑后好，打开页面就可以看到PPT的内容。 按下S键，会打开时间，下一张PPT，Notes等信息的页面，方便演示PPT
+
+						---
+
+						### 幻灯片内容实现方法
+						***
+
+						1.幻灯片的内容需要包含在`<div class="reveal"> <div class="slides">`的标签中。
+
+						2.一个section是一页幻灯片。当section包含在section中时，是一个纵向的幻灯片。
+
+						3.怎么理解呢？ 可以这样理解：横向的幻灯片代表一章，纵向的幻灯片代表一章中的一节。那么横向的幻灯片在播放时是左右切换的，而纵向的幻灯片是上下切换的。For example:
+						
+						```
+						<div class="reveal">
+						    <div class="slides">
+						        <section>Single Horizontal Slide</section>
+						        <section>
+						            <section>Vertical Slide 1</section>
+						            <section>Vertical Slide 2</section>
+						        </section>
+						    </div>
+						</div>
+						```
+						
+					</script>
+				</section>
+				<section>
+		            <section data-markdown style="text-align:left;padding-left:10px;font-size:34px;"  data-separator="---" data-separator-vertical="--">
+						<script type="text/template">
+							### html实现内容
+							***
+
+							##### 标题和正文
+
+							* section中的内容就是幻灯片的内容，你可以使用h2标签标示title, p表示内容。需要红色的字体可以直接设置style的color为red。
+
+							* 当某一页需要特殊背景色，可以使用data-background在section上设置, data-background-transition表示背景的过渡效果。For example:
+
+							```
+							<section data-background-transition="zoom" data-background="#dddddd">
+							```
+
+							* 如果需要正文一段一段出现。可以使用fragment。For Example:
+
+							```
+							<p class="fragment"></p>
+							```
+
+						</script>
+		            </section>
+		            <section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+						<script type="text/template">
+							### html实现内容
+							***
+
+							##### 代码
+
+							reveal.js使用highlight.js来支持代码高亮。可以直接写code标签来实现, data-trim表示去除多余的空格。For Example:
+
+							```
+							<pre><code data-trim>
+							  console.log('hello reveal.js!');
+							</code></pre>
+							```
+
+						</script>
+		            </section>
+		            <section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+						<script type="text/template">
+							### html实现内容
+							***
+
+							##### 注释
+
+							在演说时，会用到注释，对于注释，可以通过`<aside class="notes">`来实现。For Example:
+
+							```
+							<aside class="notes">
+							  这里是注释。
+							</aside>
+							```
+
+							在幻灯片页面，按下s键，就可以调出注释页面，注释页面包含了当前幻灯片，下一章幻灯片，注释，以及幻灯片播放时间。
+
+						</script>
+		            </section>
+		        </section>
+		        <section>
+			        <section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+						<script type="text/template">
+							### markdown实现
+							***
+
+							reveal.js不仅支持html表示来实现内容， 还可以通过markdown来实现内容。使用markdown实现内容时，需要对section标示添加data-markdown属性，然后将markdown内容写到一个text/template脚本中。For Example:
+
+							```
+							<section data-markdown>
+							    <script type="text/template">
+							        ## Page title
+
+							        A paragraph with some text and a [link](http://hakim.se).
+							    </ script>
+							</ section>
+							```
+							---
+
+							背景色，fragment功能的实现，可以通过注释来实现。For Example:
+
+							```
+							<section data-markdown>
+							    <script type="text/template">
+							   	<!- - .slide: data-background="#ff0000" - ->
+							        - Item 1 <!- - .element: class="fragment" data-fragment-index="2" - ->
+							        - Item 2 <!- - .element: class="fragment" data-fragment-index="1" - ->
+							    </ script>
+							</ section>
+							```
+							
+						</script>
+		            </section>
+
+		            <section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+						<script type="text/template">
+							### markdown实现
+							***
+
+							##### 外置md文件
+
+							reveal.js可以引用一个外置的markdown文件来解析。For Example:
+
+							```
+							<section data-markdown="example.md"  
+							         data-separator="^\n\n\n"  
+							         data-separator-vertical="^\n\n"  
+							         data-separator-notes="^N o t e:"  
+							         data-charset="iso-8859-15">
+							</section>
+							```
+							
+						</script>
+		            </section>
+
+		            <section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+						<script type="text/template">
+							### markdown实现
+							***
+
+							##### 分页实现
+
+							一个markdown文件中可以连续包含多个章内容。可以在section中通过属性data-separator, data-separator-vertical来划分章节。For Example:
+
+							```
+							<section data-separator=" - - - " data-separator-vertical=" - - "  >
+							  <script type="text/template">
+							    "#" 主题1
+							    "-" 主题1-内容1
+							    "-" 主题1-内容2
+							    "- -"
+							    "##" 主题1-内容1
+							    内容1-细节1
+							    "- -"
+							    "##" 主题1-内容2
+							    内容1-细节2
+							    "- - -"
+							    "#" 主题2
+							  </ script>
+							</ section>
+							```
+							
+						</script>
+		            </section>
+
+		            <section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+						<script type="text/template">
+							### markdown实现
+							***
+
+							##### 注释
+
+							对section添加 data-separator-notes="^Note:"属性，就可以指定Note:后面的内容为当前幻灯片的注释。For Example:
+
+							```
+							# Title
+							## Sub-title
+
+							Here is some content...
+
+							Note:
+							This will only display in the notes window.
+							```
+							
+						</script>
+		            </section>
+
+		        </section>
+		        <section data-markdown style="text-align:left;padding-left:10px;font-size:smaller;"  data-separator="---" data-separator-vertical="--">
+					<script type="text/template">
+						### 多主题
+
+						reveal.js提供了多种样式。可以通过引用不同的主题来实现。具体主题查看reveal.js/css/theme下的css文件。
+
+						---
+
+						### 总结
+
+						用reveal.js来实现幻灯片，可以只关注内容，忽略各种切换效果。而且可以使用markdown来实现，大大提高了编写效率。最后生成的html文件。
+
+						---
+
+						THANKS
+
+					</script>
+	            </section>
 			</div>
 		</div>
 
@@ -36,12 +302,32 @@
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
+			// Reveal.initialize({
+			// 	dependencies: [
+			// 		{ src: 'plugin/markdown/marked.js' },
+			// 		{ src: 'plugin/markdown/markdown.js' },
+			// 		{ src: 'plugin/notes/notes.js', async: true },
+			// 		{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }，
+			// 		{ src: 'plugin/zoom-js/zoom.js', async: true },
+			// 		{ src: 'plugin/notes/notes.js', async: true }
+			// 	]
+			// });
+
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/remotes/remotes.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 		</script>
