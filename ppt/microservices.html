@@ -28,7 +28,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section style="text-align:left;padding-left:10px;font-size:smaller;">
+<section style="text-align:left;padding-left:10px;font-size:30px;">
   <h1 class="title">SpringCloud初探</h1>
   <h1 class="subtitle">SpringCloud全家桶</h1>
   <h2 class="author">Yezhiwei</h2>
@@ -37,15 +37,15 @@
 
 <section id="什么是springcloud" class="slide level2" style="text-align:left;padding-left:10px;font-size:smaller;">
 <h1>什么是SpringCloud？</h1>
-<p fragment>Spring Cloud是一系列框架的有序集合，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架（服务发现注册、配置中心、消息总线、负载均衡、断路器、智能路由、数据监控、分布式会话和集群状态管理等）组合起来，通过Spring Boot进行再封装屏蔽掉了复杂的配置，巧妙地简化了分布式系统基础设施的开发，最终给我们一套简单易懂、易部署和易维护的分布式系统开发利器，做到一键启动和部署。</p>
-<p fragment>Spring Cloud包含了多个子项目（针对分布式系统中涉及的多个不同开源产品），比如：Spring Cloud Config、Spring Cloud Netflix、Spring Cloud CloudFoundry、Spring Cloud AWS、Spring Cloud Security、Spring Cloud Commons、Spring Cloud Zookeeper、Spring Cloud CLI等项目。</p>
-<p fragment>总之，Spring Cloud从技术架构上降低了对大型系统构建的要求，使我们以非常低的成本搭建一套高效、分布式、容错的平台。</p>
+<p fragment grow>Spring Cloud是一系列框架的有序集合，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架（服务发现注册、配置中心、消息总线、负载均衡、断路器、智能路由、数据监控、分布式会话和集群状态管理等）组合起来，通过Spring Boot进行再封装屏蔽掉了复杂的配置，巧妙地简化了分布式系统基础设施的开发，最终给我们一套简单易懂、易部署和易维护的分布式系统开发利器，做到一键启动和部署。</p>
+<p fragment grow>Spring Cloud包含了多个子项目（针对分布式系统中涉及的多个不同开源产品），比如：Spring Cloud Config、Spring Cloud Netflix、Spring Cloud CloudFoundry、Spring Cloud AWS、Spring Cloud Security、Spring Cloud Commons、Spring Cloud Zookeeper、Spring Cloud CLI等项目。</p>
+<p fragment grow>总之，Spring Cloud从技术架构上降低了对大型系统构建的要求，使我们以非常低的成本搭建一套高效、分布式、容错的平台。</p>
 </section>
 <section id="微服务架构" class="slide level2" style="text-align:left;padding-left:10px;font-size:smaller;">
 <h1>微服务架构</h1>
-<p fragment>简单的说，微服务架构就是将一个完整的应用从数据存储开始垂直拆分成多个不同的服务，每个服务都能独立部署、独立维护、独立扩展、独立访问（或者有独立的数据库）的服务单元，服务与服务间通过诸如RESTful API或Feign Service的方式互相调用。</p>
-<p fragment>关于微服务架构相关的产品社区也变得越来越活跃（比如：Netflix、Dubbo、Kubernetes），Spring Cloud Netflix与各种Netflix OSS组件集成，组成微服务的核心，主要有Eureka, Hystrix, Zuul, Archaius… ；</p>
-<p fragment>Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色，并且方便与Spring集成。它是国内公司用的比较多的高性能的分布式RPC框架。</p>
+<p fragment grow>简单的说，微服务架构就是将一个完整的应用从数据存储开始垂直拆分成多个不同的服务，每个服务都能独立部署、独立维护、独立扩展、独立访问（或者有独立的数据库）的服务单元，服务与服务间通过诸如RESTful API或Feign Service的方式互相调用。</p>
+<p fragment grow>关于微服务架构相关的产品社区也变得越来越活跃（比如：Netflix、Dubbo、Kubernetes），Spring Cloud Netflix与各种Netflix OSS组件集成，组成微服务的核心，主要有Eureka, Hystrix, Zuul, Archaius… ；</p>
+<p fragment grow>Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色，并且方便与Spring集成。它是国内公司用的比较多的高性能的分布式RPC框架。</p>
 <blockquote>
 <p>Dubbo |ˈdʌbəʊ| is a high-performance, java based RPC framework open-sourced by Alibaba. As in many RPC systems, dubbo is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types. On the server side, the server implements this interface and runs a dubbo server to handle client calls. On the client side, the client has a stub that provides the same methods as the server.</p>
 </blockquote>
