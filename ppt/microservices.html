@@ -29,14 +29,14 @@
     <div class="slides">
 
 <section style="text-align:left;padding-left:10px;font-size:30px;">
-  <h1 class="title">SpringCloud初探</h1>
-  <h1 class="subtitle">SpringCloud全家桶</h1>
-  <h2 class="author">Yezhiwei</h2>
-  <h3 class="date">2017-11-05</h3>
+  <h2 class="title">SpringCloud初探</h2>
+  <h2 class="subtitle">SpringCloud全家桶</h2>
+  <h3 class="author">Yezhiwei</h3>
+  <h4 class="date">2017-11-05</h4>
 </section>
 
 <section id="什么是springcloud" class="slide level2" style="text-align:left;padding-left:10px;font-size:smaller;">
-<h1>什么是SpringCloud？</h1>
+<h2>什么是SpringCloud？</h2>
 <section>
 <p>Spring Cloud是一系列框架的有序集合，它只是将目前各家公司开发的比较成熟、经得起实际考验的服务框架（服务发现注册、配置中心、消息总线、负载均衡、断路器、智能路由、数据监控、分布式会话和集群状态管理等）组合起来，通过Spring Boot进行再封装屏蔽掉了复杂的配置，巧妙地简化了分布式系统基础设施的开发，最终给我们一套简单易懂、易部署和易维护的分布式系统开发利器，做到一键启动和部署。</p>
 </section>
@@ -44,7 +44,7 @@
 <section>总之，Spring Cloud从技术架构上降低了对大型系统构建的要求，使我们以非常低的成本搭建一套高效、分布式、容错的平台。</section>
 </section>
 <section id="微服务架构" class="slide level2" style="text-align:left;padding-left:10px;font-size:smaller;">
-<h1>微服务架构</h1>
+<h2>微服务架构</h2>
 <p class="fragment">简单的说，微服务架构就是将一个完整的应用从数据存储开始垂直拆分成多个不同的服务，每个服务都能独立部署、独立维护、独立扩展、独立访问（或者有独立的数据库）的服务单元，服务与服务间通过诸如RESTful API或Feign Service的方式互相调用。</p>
 <p class="fragment">关于微服务架构相关的产品社区也变得越来越活跃（比如：Netflix、Dubbo、Kubernetes），Spring Cloud Netflix与各种Netflix OSS组件集成，组成微服务的核心，主要有Eureka, Hystrix, Zuul, Archaius… ；</p>
 <p class="fragment">Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色，并且方便与Spring集成。它是国内公司用的比较多的高性能的分布式RPC框架。</p>
@@ -107,7 +107,7 @@ Spring Cloud Stream是创建消息驱动微服务应用的框架。Spring Cloud 
 </figure>
 </section>
 <section id="和spring-boot-是什么关系" class="slide level2" style="text-align:left;padding-left:10px;font-size:smaller;">
-<h1>和Spring Boot 是什么关系</h1>
+<h2>和Spring Boot 是什么关系</h2>
 <p>Spring Boot 是 Spring 的一套快速配置脚手架，简化了很多配置（使用过Spring与其他框架集成的同学一定有体会），减少了依赖包冲突的机会哈，我们现在可以基于Spring Boot 快速开发单个微服务，Spring Cloud是一个基于Spring Boot实现的云应用开发、服务治理套件；Spring Boot专注于快速开发单个个体服务，而Spring Cloud是关注全局的服务治理框架；Spring Boot使用了默认大于配置的理念（提供各种starter），Spring Cloud很大的一部分是基于Spring Boot来实现。</p>
 <p class="fragment">Spring Boot可以离开Spring Cloud独立使用开发项目，但是Spring Cloud离不开Spring Boot，属于依赖的关系。</p>
 <blockquote>
@@ -115,7 +115,7 @@ Spring Cloud Stream是创建消息驱动微服务应用的框架。Spring Cloud 
 </blockquote>
 </section>
 <section id="spring-cloud的优势" class="slide level2" style="text-align:left;padding-left:10px;font-size:smaller;">
-<h1>Spring Cloud的优势</h1>
+<h2>Spring Cloud的优势</h2>
 <p>微服务的框架那么多比如：Dubbo、Kubernetes，为什么就要使用Spring Cloud的呢？</p>
 <ul>
 <li>产出于Spring大家族，可以保证后续的更新、完善。</li>
@@ -126,7 +126,7 @@ Spring Cloud Stream是创建消息驱动微服务应用的框架。Spring Cloud 
 </ul>
 </section>
 <section id="总结" class="slide level2" style="text-align:left;padding-left:10px;font-size:smaller;">
-<h1>总结</h1>
+<h2>总结</h2>
 <p>使用Spring Cloud一站式解决方案能从容应对业务发展的同时大大减少开发成本，很轻松的搞出来套分布式系统基础设施。</p>
 </section>
     </div>
