@@ -48,9 +48,9 @@
 <section>简单的说，微服务架构就是将一个完整的应用从数据存储开始垂直拆分成多个不同的服务，每个服务都能独立部署、独立维护、独立扩展、独立访问（或者有独立的数据库）的服务单元，服务与服务间通过诸如RESTful API或Feign Service的方式互相调用。</section>
 <section>关于微服务架构相关的产品社区也变得越来越活跃（比如：Netflix、Dubbo、Kubernetes），Spring Cloud Netflix与各种Netflix OSS组件集成，组成微服务的核心，主要有Eureka, Hystrix, Zuul, Archaius… ；</section>
 <section>Dubbo是Alibaba开源的分布式服务框架，它最大的特点是按照分层的方式来架构，使用这种方式可以使各个层之间解耦合（或者最大限度地松耦合）。从服务模型的角度来看，Dubbo采用的是一种非常简单的模型，要么是提供方提供服务，要么是消费方消费服务，所以基于这一点可以抽象出服务提供方（Provider）和服务消费方（Consumer）两个角色，并且方便与Spring集成。它是国内公司用的比较多的高性能的分布式RPC框架。</section>
-<blockquote>
+<section>
 <p>Dubbo |ˈdʌbəʊ| is a high-performance, java based RPC framework open-sourced by Alibaba. As in many RPC systems, dubbo is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types. On the server side, the server implements this interface and runs a dubbo server to handle client calls. On the client side, the client has a stub that provides the same methods as the server.</p>
-</blockquote>
+</section>
 <section>Kubernetes是一个开源系统，用来自动部署、缩放和管理容器应用。它可以使用多语言并且提供原语服务开通、运行、缩放和分布式系统管理。它提供的服务，例如配置管理、服务发现、负载均衡、指标收集和日志聚集，都通过各种各样的语言来实现。</section>
 <h3 id="spring-cloud-netflix">Spring Cloud Netflix</h3>
 <h4 id="netflix-eureka">Netflix Eureka</h4>
@@ -59,9 +59,9 @@
 <section>由于各种服务都注册到了服务中心，那么我们就会想到：几台服务提供相同服务怎么来做均衡负载？怎么监控服务器调用成功率？什么是熔断？如何移除服务列表中的故障点？如何（监控服务调用时间）对不同的服务器设置不同的权重等等？</section>
 <h4 id="netflix-feign">Netflix Feign</h4>
 <section>在此之前，各个微服务都是以HTTP接口的形式暴露自身服务的，因此在调用远程服务时就必须使用HTTP客户端，使用起来很不方便，需要了解URL，有时还需要拼装真正请求的URL。有没有一种用起来更方便、更优雅的方式吗？答案是肯定的，Spring Cloud想到了这些————Feign。Spring Cloud Feign是一套基于Netflix Feign实现的声明式服务调用客户端。它使得编写Web服务客户端变得更加简单。在Spring Cloud中使用Feign, 我们只需要通过创建接口并用注解来配置既可完成对Web服务接口的绑定，可以做到使用HTTP请求远程服务时能与调用本地方法一样的编码体验，感知不到这是个HTTP请求，同时还整合了Ribbon和Eureka来提供均衡负载的HTTP客户端实现，实现透明化的负载均衡。</section>
-<blockquote class="fragment">
+<section>
 <section>Feign是一个声明式Web Service客户端。使用Feign能让编写Web Service客户端更加简单, 它的使用方法是定义一个接口，然后在上面添加注解，同时也支持JAX-RS标准的注解。Feign也支持可拔插式的编码器和解码器。Spring Cloud对Feign进行了封装，使其支持了Spring MVC标准注解和HttpMessageConverters。Feign可以与Eureka和Ribbon组合使用以支持负载均衡。</section>
-</blockquote>
+</section>
 <h4 id="netflix-hystrix">Netflix Hystrix</h4>
 <section>熔断器，容错管理工具，旨在通过熔断机制控制服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力。如第三方服务超时，基础服务的故障可能会导致级联故障，进而造成整个系统不可用，这种现象被称为服务雪崩效应。</section>
 <section>熔断器可以实现快速失败，当Hystrix Command请求后端服务失败数量超过一定比例(默认50%)， 断路器会切换到开路状态(Open)。这时所有请求会直接失败而不会发送到后端服务。断路器保持在开路状态一段时间后(默认5秒), 自动切换到半开路状态(HALF-OPEN)。这时会判断下一次请求的返回情况，如果请求成功，断路器切回闭路状态(CLOSED)，否则重新切换到开路状态(OPEN)。Hystrix的断路器一旦发现后端服务不可用，断路器会直接切断请求链，避免发送大量无效请求影响系统吞吐量，并且断路器有自我检测并恢复的能力。</section>
