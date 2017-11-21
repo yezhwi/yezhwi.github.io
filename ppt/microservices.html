@@ -56,27 +56,27 @@
       </section>
         
       <section id="什么是springcloud" class="slide level3" style="text-align:left;padding-left:10px;font-size:smaller;">
-        <h3 id="spring-cloud-netflix">Spring Cloud Netflix</h3>
-        <h4 id="netflix-eureka">Netflix Eureka</h4>
+        <h2 id="spring-cloud-netflix">Spring Cloud Netflix</h2>
+        <h3 id="netflix-eureka">Netflix Eureka</h3>
         <section>服务中心，服务注册与发现，一个基于 REST 的服务，用于定位服务，以实现服务发现和故障转移。它提供了完整的Service Registry和Service Discovery实现，也是Spring Cloud体系中最重要最核心的组件之一。</section>
         <section>在服务调用之间增加一层，实现服务间的调用解耦，管理着服务提供者的生命周期，为消费者提供可用的服务，任何一个服务提供者的改动，不会牵连此服务的消费者跟着重启。服务之间通过服务中心来获取服务，我们不需要关注调用的服务IP地址、由几台服务器组成集群向外提供服务，每次直接去服务中心获取可以使用的服务去调用既可。因此，我们不再关心服务端是否为集群、服务端IP或端口变化，我们只需要将Server端的服务注册到Eureka中，Client端去Eureka中去获取配置中心Server端的服务既可。</section>
         <section>由于各种服务都注册到了服务中心，那么我们就会想到：几台服务提供相同服务怎么来做均衡负载？怎么监控服务器调用成功率？什么是熔断？如何移除服务列表中的故障点？如何（监控服务调用时间）对不同的服务器设置不同的权重等等？</section>
       </section>
 
       <section id="什么是springcloud" class="slide level3" style="text-align:left;padding-left:10px;font-size:smaller;">
-        <h4 id="netflix-feign">Netflix Feign</h4>
+        <h3 id="netflix-feign">Netflix Feign</h3>
         <section>在此之前，各个微服务都是以HTTP接口的形式暴露自身服务的，因此在调用远程服务时就必须使用HTTP客户端，使用起来很不方便，需要了解URL，有时还需要拼装真正请求的URL。有没有一种用起来更方便、更优雅的方式吗？答案是肯定的，Spring Cloud想到了这些————Feign。Spring Cloud Feign是一套基于Netflix Feign实现的声明式服务调用客户端。它使得编写Web服务客户端变得更加简单。在Spring Cloud中使用Feign, 我们只需要通过创建接口并用注解来配置既可完成对Web服务接口的绑定，可以做到使用HTTP请求远程服务时能与调用本地方法一样的编码体验，感知不到这是个HTTP请求，同时还整合了Ribbon和Eureka来提供均衡负载的HTTP客户端实现，实现透明化的负载均衡。</section>
         <section>Feign是一个声明式Web Service客户端。使用Feign能让编写Web Service客户端更加简单, 它的使用方法是定义一个接口，然后在上面添加注解，同时也支持JAX-RS标准的注解。Feign也支持可拔插式的编码器和解码器。Spring Cloud对Feign进行了封装，使其支持了Spring MVC标准注解和HttpMessageConverters。Feign可以与Eureka和Ribbon组合使用以支持负载均衡。</section>
       </section>
 
       <section id="什么是springcloud" class="slide level3" style="text-align:left;padding-left:10px;font-size:smaller;">
-        <h4 id="netflix-hystrix">Netflix Hystrix</h4>
+        <h3 id="netflix-hystrix">Netflix Hystrix</h3>
         <section>熔断器，容错管理工具，旨在通过熔断机制控制服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力。如第三方服务超时，基础服务的故障可能会导致级联故障，进而造成整个系统不可用，这种现象被称为服务雪崩效应。</section>
         <section>熔断器可以实现快速失败，当Hystrix Command请求后端服务失败数量超过一定比例(默认50%)， 断路器会切换到开路状态(Open)。这时所有请求会直接失败而不会发送到后端服务。断路器保持在开路状态一段时间后(默认5秒), 自动切换到半开路状态(HALF-OPEN)。这时会判断下一次请求的返回情况，如果请求成功，断路器切回闭路状态(CLOSED)，否则重新切换到开路状态(OPEN)。Hystrix的断路器一旦发现后端服务不可用，断路器会直接切断请求链，避免发送大量无效请求影响系统吞吐量，并且断路器有自我检测并恢复的能力。</section>
       </section>
 
       <section id="什么是springcloud" class="slide level3" style="text-align:left;padding-left:10px;font-size:smaller;">
-        <h4 id="netflix-zuul">Netflix Zuul</h4>
+        <h3 id="netflix-zuul">Netflix Zuul</h3>
         <section>Eureka用于服务的注册于发现，Feign支持服务的调用以及均衡负载，Hystrix处理服务的熔断防止故障扩散，Spring Cloud Config服务集群配置中心，似乎一个微服务框架已经完成了。</section>
         <section>但是，外部的应用如何来访问内部各种各样的微服务呢？在微服务架构中，后端服务往往不直接开放给调用端，而是通过一个API网关向外统一提供服务，另外也简化客户端的调用。API网关会根据请求的url路由到真正的服务上。当添加API网关后，在外部第三方客户端和服务提供方之间就可以对调用方通信进行权限控制、访问频率限制等。满足条件后将请求均衡分发给后台服务端、对不同的客户端（PC Web、iOS、Android）提供不同的数据量（减少不必要的数据传输）。</section>
         <section>Zuul 正是提供动态路由，监控，弹性，安全等边缘服务的框架。 &gt; 在Spring Cloud体系中， Spring Cloud Zuul就是提供负载均衡、反向代理、权限认证的一个API gateway。</section>
