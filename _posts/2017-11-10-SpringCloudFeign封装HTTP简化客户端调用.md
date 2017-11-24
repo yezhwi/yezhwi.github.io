@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Feign封装RESTfulAPI简化客户端调用
-subtitle:   Feign方便的声明式对服务的定义和调用
+subtitle:   Feign对服务的声明式定义和调用
 date:       2017-11-10
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
