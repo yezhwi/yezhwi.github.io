@@ -382,6 +382,66 @@ public class Application {
 }
 ```
 
+* 如果服务端启动时开启认证，需要修改`MongoDbFactory `代码
+
+```
+package com.gemantic.config;
+
+import com.mongodb.MongoCredential;
+import com.mongodb.ServerAddress;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.mongo.MongoProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+
+import com.mongodb.MongoClient;
+
+import java.util.ArrayList;
+
+@Configuration
+public class MultipleMongoConfig {
+
+    @Autowired
+    private MultipleMongoProperties mongoProperties;
+
+    @Primary
+    @Bean(name = PrimaryMongoConfig.MONGO_TEMPLATE)
+    public MongoTemplate primaryMongoTemplate() throws Exception {
+        return new MongoTemplate(primaryFactory(this.mongoProperties.getPrimary()));
+    }
+
+    @Bean
+    @Qualifier(SecondaryMongoConfig.MONGO_TEMPLATE)
+    public MongoTemplate secondaryMongoTemplate() throws Exception {
+        return new MongoTemplate(secondaryFactory(this.mongoProperties.getSecondary()));
+    }
+
+    @Bean
+    @Primary
+    public MongoDbFactory primaryFactory(MongoProperties mongo) throws Exception {
+        ServerAddress addr = new ServerAddress(mongo.getHost(), mongo.getPort());
+        ArrayList credentials = new ArrayList();
+        credentials.add(MongoCredential.createScramSha1Credential(mongo.getUsername(), mongo.getDatabase(), mongo.getPassword()));
+
+        return new SimpleMongoDbFactory(new MongoClient(addr, credentials), mongo.getDatabase());
+    }
+
+    @Bean
+    public MongoDbFactory secondaryFactory(MongoProperties mongo) throws Exception {
+        ServerAddress addr = new ServerAddress(mongo.getHost(), mongo.getPort());
+        ArrayList credentials = new ArrayList();
+        credentials.add(MongoCredential.createScramSha1Credential(mongo.getUsername(), mongo.getDatabase(), mongo.getPassword()));
+
+        return new SimpleMongoDbFactory(new MongoClient(addr, credentials), mongo.getDatabase());
+    }
+}
+```
+
 
 
 
