@@ -111,6 +111,12 @@ server.port=9908
 * 完成了所有的配置，依次启动服务注册中心、服务提供者、服务消费者（eureka-service-consumer-hystrix）
 * 最后，在Hystrix Dashboard的首页输入http://localhost:9903/hystrix.stream，已启动对“eureka-service-consumer-hystrix”的监控，点击“Monitor Stream”按钮，此时我们可以看到如下页面：
 
+入口：
+
+![hystrix-dashboard-1](/img/hystrix-dashboard-1.png)
+
+效果：
+
 ![hystrix-dashboard](/img/hystrix-dashboard-2.png)
 
 在监控信息的左上部分找到两个重要的图形信息：一个实心圆和一条曲线。
