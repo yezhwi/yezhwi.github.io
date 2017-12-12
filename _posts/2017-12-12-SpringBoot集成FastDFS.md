@@ -48,7 +48,7 @@ FastDFS为互联网量身定制，充分考虑了冗余备份、负载均衡、�
 
 * 将FastDFS配置引入项目
 
-仅需要在启动类上增加注解 `@EnableSwagger2 `，启动该注解使得用在Controller中的Swagger注解生效
+将注解配置加在入口类中：@Import(FdfsClientConfig.class)
 
 ```
 @Import(FdfsClientConfig.class)
