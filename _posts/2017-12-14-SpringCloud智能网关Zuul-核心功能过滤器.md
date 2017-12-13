@@ -97,7 +97,7 @@ public class AccessFilter extends ZuulFilter {
 
 * 在实现了自定义过滤器之后，它并不会直接生效，我们还需要为其创建具体的Bean才能启动该过滤器，如`@Component`
 
-* 核心过滤器中的`SendErrorFilter`是用来处理异常信息的，详细看看SendErrorFilter的shouldFilter方法发现
+* 核心过滤器中的`SendErrorFilter`是用来处理异常信息的，详细看看SendErrorFilter源码的shouldFilter方法发现
 
 ```
 public boolean shouldFilter() {
@@ -108,7 +108,7 @@ public boolean shouldFilter() {
 
 可以看到该方法的返回值中有一个重要的判断依据`ctx.getThrowable()`。
 
-* `SendErrorFilter` 中错误路径
+* `SendErrorFilter` 源码中错误路径
 
 ```
 @Value("${error.path:/error}")
