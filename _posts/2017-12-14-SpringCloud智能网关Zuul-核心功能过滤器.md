@@ -128,7 +128,6 @@ public class HttpNotFountConfig implements ErrorController {
     public ResultData error(HttpServletRequest request) {
         RequestContext ctx = RequestContext.getCurrentContext();
         if (null != ctx) {
-            System.out.println(ctx.getResponse().getStatus());
             return ResultData.builder().message(Message.builder().code(ctx.getResponse().getStatus()).message(HttpStatus.valueOf(ctx.getResponse().getStatus()).getReasonPhrase()).build()).build();
         }
         return ResultData.builder().message(Message.builder().code(HttpStatus.NOT_FOUND.value()).message(HttpStatus.NOT_FOUND.getReasonPhrase()).build()).build();
@@ -138,6 +137,15 @@ public class HttpNotFountConfig implements ErrorController {
     public String getErrorPath() {
         return ERROR_PATH;
     }
+}
+```
+
+在原来的基础上增加了如下代码
+
+```
+RequestContext ctx = RequestContext.getCurrentContext();
+if (null != ctx) {
+    return ResultData.builder().message(Message.builder().code(ctx.getResponse().getStatus()).message(HttpStatus.valueOf(ctx.getResponse().getStatus()).getReasonPhrase()).build()).build();
 }
 ```
 
