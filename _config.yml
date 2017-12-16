@@ -20,7 +20,7 @@ sidebar-avatar: /img/qrcode_for_gh_b10c7e3ec75e_430.jpg     # use absolute URL, 
 RSS: false
 weibo_username:     yezhwi
 # zhihu_username:     qiubaiying
-github_username:    yezhwi
+# github_username:    yezhwi
 #facebook_username:  baiying.qiu.7
 #jianshu_username:   e71990ada2fd
 #twitter_username:   qiubaiying
@@ -69,7 +69,7 @@ kramdown:
 
 # Analytics settings
 # Baidu Analytics
-#ba_track_id: b50bf2b12b5338a1845e33832976fd68
+ba_track_id: daa3ab65e34c467aed6ea65df70f47a7
 
 # Google Analytics
 #ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
