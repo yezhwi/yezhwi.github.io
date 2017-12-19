@@ -107,7 +107,9 @@ public class DefaultExceptionHandler {
 
 ### 如果参数太少，还需要定义一个对象吗？
 
-比如，接口请求中，就有两个参数再定义对象就太麻烦了！确实，如果只有少数对象，直接把参数写到Controller层，然后在Controller层进行验证就可以了。
+比如，接口请求中，就有两个参数再定义对象就太麻烦了！确实，如果只有少数对象，能直接把参数写到Controller层，然后在Controller层进行验证该多好。
+
+JSR和Hibernate validator的校验只能对Object的属性进行校验，不能对单个的参数进行校验，但Spring 在此基础上进行了扩展，添加了MethodValidationPostProcessor拦截器，可以实现对方法参数的校验。
 
 ```
 @GetMapping(value = "/user")
