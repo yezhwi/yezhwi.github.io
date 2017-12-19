@@ -7,7 +7,7 @@ author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:
-    - RESTful API
+    - RESTfulAPI
 ---
 
 ### 幂等性

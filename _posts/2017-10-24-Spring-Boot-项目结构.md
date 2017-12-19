@@ -8,7 +8,7 @@ header-img: img/WechatIMG38.jpeg
 catalog: true
 category: springboot
 tags:
-    - Spring Boot
+    - SpringBoot
 ---
 
 

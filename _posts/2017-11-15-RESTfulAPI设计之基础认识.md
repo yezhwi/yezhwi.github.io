@@ -7,7 +7,7 @@ author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
 tags:
-    - RESTful API
+    - RESTfulAPI
 ---
 
 我们知道一旦API发布后，就很难对它做很大的改动并且保持像先前一样的正确性。所以在这之前我们要做一些规范。

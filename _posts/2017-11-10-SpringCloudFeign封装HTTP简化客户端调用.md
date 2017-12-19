@@ -8,7 +8,7 @@ header-img: img/WechatIMG38.jpeg
 catalog: true
 category: springcloud
 tags:
-    - Spring Cloud
+    - SpringCloud
     - Feign
 ---
 
