@@ -16,7 +16,7 @@ tags:
 
 在[上一篇](https://yezhwi.github.io/springboot/2017/12/17/SpringBoot-Spring-Data-REST%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9ARESTfulAPI/)中除去配置类和实体类，写了两行代码，就实现了RESTful风格的接口，但在实际使用时，还需要一些额外的处理，比如在返回的数据中，password这类敏感字段是不应该返回的；删除操作，实际需求不是硬删除只是更新一个删除状态；保存对象操作之前需要做相应的数据校验和数据格式的转换等等，***自动转换成REST服务，是否支持自定义功能？***
 
-* 分页+排序查询(这个与以往的习惯有点不同)
+### 分页+排序查询(这个与以往的习惯有点不同)
 
 `http://localhost:8080/user?sort=id,desc&size=2`
 
@@ -82,7 +82,7 @@ tags:
 }
 ```
 
-* 自定义查询方法
+### 自定义查询方法
 
 根据给定的字段查找相应表中的数据对象。比如在上一篇中定义的User实体，需要一个按照userName(假如数据库中唯一)值查到与之对应的数据对象返回，只需要在UserRopository中定义如下代码：
 
@@ -127,7 +127,7 @@ path = "name" 将路径参数findByUserName转为name /user/search/name
 rel = "name" 更改参数findByUserName转为name
 
 
-* 多条件查询
+### 多条件查询
 
 如果匹配多个条件查询，则用And和Or连接，比如：
 
@@ -158,7 +158,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 ![多条件查询](/img/spring-data-rest-7.png)
 
-* 排序
+### 排序
 
 可以在方法名称的结尾处添加OrderBy，实现结果集排序。比如可以按照User的userName降序排列
 
@@ -190,7 +190,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 ![排序](/img/spring-data-rest-8.png)
 
-* 隐藏某个字段
+### 隐藏某个字段
 
 比如在实体对象User中，不希望password序列化为JSON，Spring Data REST默认使用的是JackSon，则我们就可以在需要隐藏的字段添加@JsonIgnore即可 
 
@@ -216,7 +216,7 @@ public class User {
 
 ![隐藏某个字段](/img/spring-data-rest-9.png)
 
-* 隐藏自定义的查询方法
+### 隐藏自定义的查询方法
 
 只需要在方法上添加 `@RestResource(exported = false)` 即可，如：
 
@@ -244,7 +244,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 ![隐藏自定义的查询方法](/img/spring-data-rest-10.png)
 
-* 屏蔽自动化方法(repository CRUD)`extends CrudRepository `
+### 屏蔽自动化方法(repository CRUD)`extends CrudRepository `
 
 在实际生产环境中，不会真正删除用户数据，此时不希望DELETE的提交方式生效，可以添加@RestResource注解，并设置exported=false，即可屏蔽Spring Data REST的自动化方法 ，只需要写如下代码：
 
@@ -268,7 +268,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
 }
 ```
 
-* 修改对象返回值json数据中的key
+### 修改对象返回值json数据中的key
 
 默认是User对象的属性，在一些特殊情况下，需要修改json返回值中的key，需要定义如下代码：
 
