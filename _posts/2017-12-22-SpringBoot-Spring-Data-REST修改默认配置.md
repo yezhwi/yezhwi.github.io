@@ -2,7 +2,7 @@
 layout:     post
 title:      SpringBoot-Spring-Data-REST修改默认配置
 subtitle:   定制化的操作实现
-date:       2017-12-23
+date:       2017-12-22
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
