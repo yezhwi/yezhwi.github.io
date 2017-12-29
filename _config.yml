@@ -4,7 +4,7 @@ SEOTitle: Yezhiwei的博客 | Yezhiwei Blog
 header-img: img/post-bg-swift.jpg
 # email: qiubaiying@gmail.com
 description: "Every failure is leading towards success."
-keyword: "Yezhiwei Blog, Java, Spring, Spring Boot, Spring Cloud, Microservice, SOA, 多线程, 分布式服务架构, 微服务"
+keyword: "Yezhiwei Blog, Java, Spring, Spring Boot, Spring Cloud, Microservice, SOA, Scala, Spark, Hadoop, 大数据, 多线程, 分布式服务架构, 微服务"
 url: "http://yezhwi.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 # github_repo: "https://github.com/yezhwi/yezhwi.github.io.git" # you code repository
@@ -22,7 +22,7 @@ weibo_username:     yezhwi
 zhihu_username:     yezhwi
 github_username:    yezhwi
 #facebook_username:  baiying.qiu.7
-#jianshu_username:   e71990ada2fd
+jianshu_username:   0ca2756c65c4
 #twitter_username:   qiubaiying
 
 
@@ -96,6 +96,12 @@ friends: [
     {
         title: "简书·Yezhiwei",
         href: "http://www.jianshu.com/u/0ca2756c65c4"
+    },{
+        title: "知乎·Yezhiwei",
+        href: "https://www.zhihu.com/people/yezhwi"
+    },{
+        title: "微博·Yezhiwei",
+        href: "http://weibo.com/yezhwi"
     },{
         title: "Apple",
         href: "https://apple.com"
