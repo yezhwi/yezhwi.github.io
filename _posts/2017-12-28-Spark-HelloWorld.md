@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      IntelliJ-IDEA-Mavne-Scala-Spark开发环境搭建
+title:      IntelliJ-IDEA-Maven-Scala-Spark开发环境搭建
 subtitle:   
 date:       2017-12-28
 author:     Yezhiwei
