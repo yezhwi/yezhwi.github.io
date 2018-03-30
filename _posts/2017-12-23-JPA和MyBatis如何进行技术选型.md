@@ -10,6 +10,7 @@ category: java
 tags:
     - MyBatis
     - JPA
+    - MySQL
 ---
 
 ### 背景
