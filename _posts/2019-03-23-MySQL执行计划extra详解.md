@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      MySQL执行计划 Extrav中的vusing index 和 using where using index 的区别
+title:      MySQL执行计划 Extra 中的vusing index 和 using where using index 的区别
 subtitle:   
 date:       2019-03-23
 author:     Yezhiwei
