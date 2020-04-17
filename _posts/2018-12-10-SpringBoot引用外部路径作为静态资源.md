@@ -25,7 +25,7 @@ SpringBoot 默认提供静态资源目录位置需置于 classpath 下（推荐�
 * classpath:/static
 * classpath:/public
 
-![](https://ws2.sinaimg.cn/large/006tNbRwly1fy0teik9jaj30ke0cydhg.jpg)
+![](https://tva2.sinaimg.cn/large/006tNbRwly1fy0teik9jaj30ke0cydhg.jpg)
 
 上面几个静态资源映射路径的优先级顺序为：META-INF/resources > resources > static > public
 

@@ -38,7 +38,7 @@ Hadoop和Spark两者都是大数据框架，但是各自存在的目的不尽相
 * Hadoop除了提供HDFS分布式数据存储功能之外，还提供了MapReduce的数据处理功能。所以我们完全可以抛开Spark，仅使用Hadoop自身的MapReduce来完成数据的处理。
 * 相反，Spark也不是非要依附在Hadoop身上才能生存。但它没有提供文件管理系统，所以，它必须和其他的分布式文件系统进行集成才能运作。我们可以选择Hadoop的HDFS，也可以选择其他的基于云的数据系统平台。但Spark默认来说还是被用在Hadoop上面的，被认为它们的结合是最好的选择。
 
-![Spark计算引擎](https://ws4.sinaimg.cn/large/006tKfTcly1fmxtrmh67gj30fg0b4wgg.jpg)
+![Spark计算引擎](https://tva4.sinaimg.cn/large/006tKfTcly1fmxtrmh67gj30fg0b4wgg.jpg)
 
 ### Spark数据处理速度秒杀MapReduce
 
@@ -60,7 +60,7 @@ Hadoop和Spark两者都是大数据框架，但是各自存在的目的不尽相
 * 支持比Map和Reduce更多的函数。
 * Spark的RDD是分布式大数据处理的高层次抽象的数据集合，对这个集合的任何操作都可以像函数式编程中操作内存中的集合一样直观、简便，但集合操作的实现确是在后台分解成一系列Task发送到集群上完成。
 
-![核心架构](https://ws4.sinaimg.cn/large/006tKfTcly1fmxtrnn85qj30go07l749.jpg) 
+![核心架构](https://tva4.sinaimg.cn/large/006tKfTcly1fmxtrnn85qj30go07l749.jpg) 
 
 
 

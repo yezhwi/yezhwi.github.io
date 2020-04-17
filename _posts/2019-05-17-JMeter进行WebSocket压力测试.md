@@ -25,7 +25,7 @@ JMeter 是目前最为流行的开源性能测试工具，JMeter 本身提供的
 
 * 通过插件地址 https://github.com/maciejzaleski/JMeter-WebSocketSampler/releases 下载最新版本（目前版本是1.0.2），本项目的源码是用 Maven 管理，直接通过 mvn package 就能生成 jar 包，然后将其拷贝到 JMeter 安装目录的 $JMETER_HOME/lib/ext 下。在生成 jar 包前要先对源码进行一点修改，因为在测试的时候报错，如下图：
 
-![checkForComodification](https://ws4.sinaimg.cn/large/006tNc79ly1g33ixgp1gcj31jd0u0why.jpg)
+![checkForComodification](https://tva4.sinaimg.cn/large/006tNc79ly1g33ixgp1gcj31jd0u0why.jpg)
 
 很简单，用下面的代码替换
 
@@ -74,21 +74,21 @@ websocket-common-9.1.1.v20140108.jar
 
 #### 创建循环控制器
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1g33jtgoqvaj31c50u0jvz.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jtgoqvaj31c50u0jvz.jpg)
 
 ![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jtywfkoj31c00u0q3w.jpg)
 
 #### 添加 WebSocket Sampler 
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1g33jw09ijzj31cb0u0n1p.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jw09ijzj31cb0u0n1p.jpg)
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1g33jxrloerj31c00u0wgk.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jxrloerj31c00u0wgk.jpg)
 
 #### 添加查看结果树
 
 ![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jz01iugj31c90u0796.jpg)
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1g33jzbna9tj31c00u0mym.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jzbna9tj31c00u0mym.jpg)
 
 #### 添加聚合报告
 
@@ -122,7 +122,7 @@ websocket-common-9.1.1.v20140108.jar
 
 * 根据上面的 ws 连接信息配置 WebSocket Sampler 
 
-![](https://ws2.sinaimg.cn/large/006tNc79ly1g33jxrloerj31c00u0wgk.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jxrloerj31c00u0wgk.jpg)
 
 ### 运行输出结果
 

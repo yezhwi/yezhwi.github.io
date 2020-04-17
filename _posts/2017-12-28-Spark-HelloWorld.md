@@ -244,7 +244,7 @@ object WordCount {
 }
 ```
 
-![代码结构](https://ws2.sinaimg.cn/large/006tNc79ly1fmwg4u52dkj31kw0mi0vq.jpg)
+![代码结构](https://tva2.sinaimg.cn/large/006tNc79ly1fmwg4u52dkj31kw0mi0vq.jpg)
 
 ### 打包命令
 
@@ -252,7 +252,7 @@ object WordCount {
 
 或者
 
-![maven package](https://ws2.sinaimg.cn/large/006tNc79ly1fmwg56yiu3j30kw0jywf6.jpg)
+![maven package](https://tva2.sinaimg.cn/large/006tNc79ly1fmwg56yiu3j30kw0jywf6.jpg)
 
 * 在 target 目录下生成 bigdata-spark-1.0-SNAPSHOT.jar
 

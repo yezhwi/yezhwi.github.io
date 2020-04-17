@@ -65,7 +65,7 @@ println(animal.flatMap(x => List(x, x.length)).collect.foreach(print))
 // 输出， 最后多出个()
 dog3salmon6salmon6rat3elephant8()
 ```
-![flatMap](https://ws2.sinaimg.cn/large/006tKfTcly1fndwwrq8gfj30a807jweu.jpg)
+![flatMap](https://tva2.sinaimg.cn/large/006tKfTcly1fndwwrq8gfj30a807jweu.jpg)
 
 上图表示 RDD 的一个分区，进行 flatMap 函数操作，flatMap 中传入的函数为 f:T->U，T 和 U 可以是任意的数据类型。将分区中的数据通过自定义函数 f 转换为新的数据。外部大方框可以认为是一个 RDD 分区，小方框代表一个集合。
 
@@ -82,7 +82,7 @@ salmon
 elephant
 ```
 
-![mapPartitions](https://ws2.sinaimg.cn/large/006tKfTcly1fndxnvy1rkj309v06u0su.jpg)
+![mapPartitions](https://tva2.sinaimg.cn/large/006tKfTcly1fndxnvy1rkj309v06u0su.jpg)
 
 上图中，通过函数 f (iter)=>iter.f ilter(_>=3) 对分区中所有数据进行过滤，数据大于和等于 3 的数据保留。
 
@@ -191,7 +191,7 @@ even : 2, 4, 6, 8, 10
 odd : 1, 3, 5, 7, 9
 ```
 
-![groupBy](https://ws2.sinaimg.cn/large/006tKfTcly1fndzrgms1cj30be08saac.jpg)
+![groupBy](https://tva2.sinaimg.cn/large/006tKfTcly1fndzrgms1cj30be08saac.jpg)
 
 上图中方框代表一个 RDD 分区，相同 key 的元素合并到一个组。例如 V1 和 V2 合并为 V， Value 为 V1,V2。形成 V,Seq(V1,V2)。
 
@@ -239,7 +239,7 @@ println(c.collect.mkString(", "))
 6, 9, 4, 7, 5, 8
 ```
 
-![subtract](https://ws4.sinaimg.cn/large/006tKfTcly1fne07o2igaj30dx0bt0t6.jpg)
+![subtract](https://tva4.sinaimg.cn/large/006tKfTcly1fne07o2igaj30dx0bt0t6.jpg)
 
 上图中左侧的大方框代表两个 RDD，大方框内的小方框代表 RDD 的分区。 右侧大方框代表合并后的 RDD，大方框内的小方框代表分区。 V1 在两个RDD 中均有，根据差集运算规则，新 RDD 不保留，V2 在第一个 RDD 有，第二个 RDD 没有，则在新 RDD 元素中包含 V2。
 
@@ -255,7 +255,7 @@ println(a.sample(true, 0.5, 10).collect.mkString(", "))
 2, 4, 8, 8
 ```
 
-![sample](https://ws4.sinaimg.cn/large/006tKfTcly1fne0hmal6ij309z07bjrh.jpg)
+![sample](https://tva4.sinaimg.cn/large/006tKfTcly1fne0hmal6ij309z07bjrh.jpg)
 
 上图中的每个方框是一个 RDD 分区。通过 sample 函数，采样 50% 的 数据。V1、V2、U1、U2、U3、U4 采样出数据 V1 和 U1、U2 形成新的 RDD。
 
@@ -352,7 +352,7 @@ println(b.cogroup(c).collect.mkString(", "))
 (1,(CompactBuffer(b, b),CompactBuffer(c, c))), (3,(CompactBuffer(b),CompactBuffer(c))), (2,(CompactBuffer(b),CompactBuffer(c)))
 ```
 
-![cogroup](https://ws2.sinaimg.cn/large/006tNc79ly1fnerq43i7uj30md0hiac5.jpg)
+![cogroup](https://tva2.sinaimg.cn/large/006tNc79ly1fnerq43i7uj30md0hiac5.jpg)
 
 上图中的大方框代表 RDD，大方框内的小方框代表 RDD 中的分区。 将RDD1中的数据（U1，1）、 （U1，2）和RDD2中的数据（U1，2）合并为（U1，（（1，2），（2）））。
 
@@ -417,7 +417,7 @@ println(b.rightOuterJoin(d).collect.mkString(", "))
 
 > collect算子，相当于 toArray， toArray 已经过时不推荐使用， collect 将分布式的 RDD 返回为一个单机的 scala Array 数组。在这个数组上运用 scala 的函数式操作。
 
-![collect](https://ws4.sinaimg.cn/large/006tNc79ly1fnes8lacxkj30db08p0t3.jpg)
+![collect](https://tva4.sinaimg.cn/large/006tNc79ly1fnes8lacxkj30db08p0t3.jpg)
 
 上图中左侧方框代表 RDD 分区，右侧方框代表单机内存中的数组。通过函数操作，将结果返回到 Driver 程序所在的节点，以数组形式存储。
 
@@ -438,7 +438,7 @@ case (k, v) => println(k + "->" + v)
 ()
 ```
 
-![collectAsMap](https://ws4.sinaimg.cn/large/006tNc79ly1fnesg6w1kdj30cv083aai.jpg)
+![collectAsMap](https://tva4.sinaimg.cn/large/006tNc79ly1fnesg6w1kdj30cv083aai.jpg)
 
 上图中的左侧方框代表 RDD 分区，右侧方框代表单机数组。 数据通过collectAsMap 函数返回给 Driver 程序计算结果，结果以 HashMap 形式存储。
 
@@ -462,13 +462,13 @@ println(b.lookup(5).mkString(", "))
 tiger, eagle
 ```
 
-![lookup](https://ws2.sinaimg.cn/large/006tNc79ly1fnesnz5yh7j30cg07uglw.jpg)
+![lookup](https://tva2.sinaimg.cn/large/006tNc79ly1fnesnz5yh7j30cg07uglw.jpg)
 
 上图中的左侧方框代表 RDD 分区，右侧方框代表 Seq，最后结果返回到Driver所在节点的应用中。
 
 > count算子，返回整个 RDD 的元素个数。
 
-![count](https://ws2.sinaimg.cn/large/006tNc79ly1fnespf0hgtj30al06hdfo.jpg)
+![count](https://tva2.sinaimg.cn/large/006tNc79ly1fnespf0hgtj30al06hdfo.jpg)
 
 上图中，返回数据的个数为 5。一个方块代表一个 RDD 分区。
 
@@ -482,14 +482,14 @@ res28: Array[Int] = Array(9, 8)
 
 > reduce算子，函数相当于对RDD中的元素进行reduceLeft函数的操作。
 
-![reduce](https://ws4.sinaimg.cn/large/006tNc79ly1fnet027967j30h508274v.jpg)
+![reduce](https://tva4.sinaimg.cn/large/006tNc79ly1fnet027967j30h508274v.jpg)
 
 自定义函数如： f：（A，B）=>（A._1+"@"+B._1，A._2+B._2）
 上图中的方框代表一个RDD分区，通过自定函数f将数据进行reduce运算。 最后的返回结果为V1@[1]V2U！@U2@U3@U4，12。
 
 > fold算子，fold和reduce的原理相同，但是与reduce不同，相当于每个reduce时，迭代器取的第一个元素是zeroValue。
 
-![fold](https://ws2.sinaimg.cn/large/006tNc79ly1fnet1tnnuej30ia088js5.jpg)
+![fold](https://tva2.sinaimg.cn/large/006tNc79ly1fnet1tnnuej30ia088js5.jpg)
 
 fold（（"V0@"，2））（ （A，B）=>（A._1+"@"+B._1，A._2+B._2））
 

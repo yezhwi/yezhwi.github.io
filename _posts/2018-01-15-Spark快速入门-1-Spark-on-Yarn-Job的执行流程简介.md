@@ -24,7 +24,7 @@ tags:
 
 > 在介绍一个典型的 Spark Job 是如何被调度执行前，先了解以下几个重要的概念
 
-![](https://ws2.sinaimg.cn/large/006tKfTcly1fncvn069uej30gk07ygln.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1fncvn069uej30gk07ygln.jpg)
 
 * DAG：即 Directed Acyclic Graph，有向无环图。
 * Application：Application 是用户编写的 Spark 应用程序，其中包含了一个 Driver 功能的代码和分布在集群中多个节点上运行的 Executor 代码。
@@ -55,7 +55,7 @@ tags:
 
 * DAGScheduler：根据 Job 构建基于 Stage 的 DAG，并提交 Stage 给 TaskScheduler。其划分 Stage 的依据是 RDD 之间的依赖关系，根据 RDD 和 Stage 之间的关系找出开销最小的调度方法，然后把 Stage 以 TaskSet 的形式提交给 TaskScheduler。此外，DAGScheduler 还处理由于 Shuffle 数据丢失导致的失败，这有可能需要重新提交运行之前的 Stage（非 Shuffle 数据丢失导致的 Task 失败由 TaskScheduler 处理）。 
 
-![TaskScheduler](https://ws2.sinaimg.cn/large/006tKfTcly1fndge3c4p6j30ev07974c.jpg)
+![TaskScheduler](https://tva2.sinaimg.cn/large/006tKfTcly1fndge3c4p6j30ev07974c.jpg)
 
 * TaskScheduler：将 Taskset 提交给 Worker（集群）运行，每个 Executor 运行什么 Task 就是在此处分配的。TaskScheduler 还维护着所有 Task 的运行状态，重试失败的 Task。
 
@@ -68,7 +68,7 @@ tags:
 ### Spark on Yarn 的Job执行流程
 
 
-![](https://ws4.sinaimg.cn/large/006tKfTcly1fnd36ro2b1j311m0nazmn.jpg)
+![](https://tva4.sinaimg.cn/large/006tKfTcly1fnd36ro2b1j311m0nazmn.jpg)
 
 Spark 应用程序被提交后，当某个动作算子触发了计算操作时，SparkContext 会向 DAGScheduler 提交一个作业，接着 DAGScheduler 会根据 RDD 生成的依赖关系划分 Stage，并决定各个 Stage 之间的依赖关系，Stage 之间的依赖关系就形成了 DAG。
 

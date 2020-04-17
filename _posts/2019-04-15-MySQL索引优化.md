@@ -94,11 +94,11 @@ create index idx_userid_order_id_createdate on test_order(user_id,order_id,creat
 
 * **查询的列被索引覆盖**，并且 where **筛选条件是索引列之一但是不是索引的不是前导列**，Extra 中为 Using where;Using index，意味着无法直接通过索引查找来查询到符合条件的数据
 
-![](https://ws2.sinaimg.cn/large/006tKfTcly1g1bhprbnd6j30u604zq2w.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1g1bhprbnd6j30u604zq2w.jpg)
 
 * **查询的列被索引覆盖**，并且 where 筛选条件是**索引列前导列的一个范围**，同样意味着无法直接通过索引查找查询到符合条件的数据
 
-![](https://ws4.sinaimg.cn/large/006tKfTcly1g1bhq5zv8fj30vt04pt8o.jpg) 　　
+![](https://tva4.sinaimg.cn/large/006tKfTcly1g1bhq5zv8fj30vt04pt8o.jpg) 　　
 
 #### NULL（既没有 Using index，也没有 Using where Using index，也没有 Using where）
 
@@ -156,15 +156,15 @@ where 筛选列是索引的前导列 &&查询列被索引覆盖 && where 筛选�
 
 查询1
 
-![](https://ws2.sinaimg.cn/large/006tKfTcly1g1bhw58d38j30tn03v0sm.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1g1bhw58d38j30tn03v0sm.jpg)
 
 查询2
 
-![](https://ws2.sinaimg.cn/large/006tKfTcly1g1bhwdgfcwj30tk030a9y.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1g1bhwdgfcwj30tk030a9y.jpg)
 
 查询3（逻辑上等价于查询1+查询2），执行计划发生了很大的变化。
 
-![](https://ws4.sinaimg.cn/large/006tKfTcly1g1bhwwytkgj30vn04jwef.jpg)
+![](https://tva4.sinaimg.cn/large/006tKfTcly1g1bhwwytkgj30vn04jwef.jpg)
 
 ### 总结：
 

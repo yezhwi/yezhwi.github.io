@@ -12,7 +12,7 @@ tags:
     - JPA
 ---
 
-![JPA关系图](https://ws2.sinaimg.cn/large/006tNc79ly1ftroylpdirj30m70auq2x.jpg)
+![JPA关系图](https://tva2.sinaimg.cn/large/006tNc79ly1ftroylpdirj30m70auq2x.jpg)
 
 ### JPA 常用API
 

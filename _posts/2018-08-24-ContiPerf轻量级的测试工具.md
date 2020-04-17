@@ -43,7 +43,7 @@ A large feature set for execution settings and performance requirements is avail
 
 * 项目使用的 spring boot 搭建，依赖如下图：
 
-![依赖关系](https://ws2.sinaimg.cn/large/006tNbRwly1fuktqf9uctj30wy0e2wfd.jpg)
+![依赖关系](https://tva2.sinaimg.cn/large/006tNbRwly1fuktqf9uctj30wy0e2wfd.jpg)
 
 * 编写单元测试
 
@@ -100,7 +100,7 @@ median:  5
 ```
 同时在工程的 target/contiperf-report 目录下生成一个 index.htm 文件，内容如下图：
 
-![contiperf-report](https://ws4.sinaimg.cn/large/006tNbRwly1fuku1d8pe7j31kw10hgmp.jpg)
+![contiperf-report](https://tva4.sinaimg.cn/large/006tNbRwly1fuku1d8pe7j31kw10hgmp.jpg)
 
 
 
