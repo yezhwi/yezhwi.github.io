@@ -51,7 +51,7 @@ tags:
 > Action 行动算子：这类算子会触发 SparkContext 提交 Job 作业，并将数据输出 Spark系统。
 > 
 
-![DAGScheduler](https://ws3.sinaimg.cn/large/006tKfTcly1fndgd4p883j30hz0810sy.jpg)
+![DAGScheduler](https://tva2.sinaimg.cn/large/006tKfTcly1fndgd4p883j30hz0810sy.jpg)
 
 * DAGScheduler：根据 Job 构建基于 Stage 的 DAG，并提交 Stage 给 TaskScheduler。其划分 Stage 的依据是 RDD 之间的依赖关系，根据 RDD 和 Stage 之间的关系找出开销最小的调度方法，然后把 Stage 以 TaskSet 的形式提交给 TaskScheduler。此外，DAGScheduler 还处理由于 Shuffle 数据丢失导致的失败，这有可能需要重新提交运行之前的 Stage（非 Shuffle 数据丢失导致的 Task 失败由 TaskScheduler 处理）。 
 
@@ -59,7 +59,7 @@ tags:
 
 * TaskScheduler：将 Taskset 提交给 Worker（集群）运行，每个 Executor 运行什么 Task 就是在此处分配的。TaskScheduler 还维护着所有 Task 的运行状态，重试失败的 Task。
 
-![](https://ws3.sinaimg.cn/large/006tKfTcly1fnd2c22o3oj30l309c449.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1fnd2c22o3oj30l309c449.jpg)
 
 * 宽依赖：与 Hadoop MapReduce 中 Shuffle 的数据依赖相同，宽依赖需要计算好所有父 RDD 对应分区的数据，然后在节点之间进行 Shuffle。
 * 窄依赖：指某个具体的 RDD，其分区 partitoin a 最多被子 RDD 中的一个分区 partitoin b 依赖。此种情况只有 Map 任务，是不需要发生 Shuffle 过程的。

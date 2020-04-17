@@ -86,7 +86,7 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 
 经过测试，三种方式在 `ID` 存在的情况下，都能返回正常的结果对象。但是如果参数是一个数据库中不存在的 `ID` 值时，`getOne` 的返回值有些不同：
 
-![getOne 懒加载](https://ws3.sinaimg.cn/large/006tKfTcly1ftru4r3q8dj31kw0phabu.jpg)
+![getOne 懒加载](https://tva2.sinaimg.cn/large/006tKfTcly1ftru4r3q8dj31kw0phabu.jpg)
 
 从上图的信息可以看出 `getOne` 是懒加载的模式，在使用对象的时候才真正地去赋值。
 

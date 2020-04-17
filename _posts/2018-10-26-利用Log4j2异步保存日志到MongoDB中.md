@@ -91,7 +91,7 @@ public class LogTest {
 
 结果：
 
-![保存结果](https://ws3.sinaimg.cn/large/006tNbRwly1fwk9nmnai0j31kw0q940j.jpg)
+![保存结果](https://tva2.sinaimg.cn/large/006tNbRwly1fwk9nmnai0j31kw0q940j.jpg)
 
 结论：
 
@@ -119,7 +119,7 @@ public class LogTest {
 
 结果：
 
-![自定义字段](https://ws3.sinaimg.cn/large/006tNbRwly1fwk9wdt1g0j31kw0hsq46.jpg)
+![自定义字段](https://tva2.sinaimg.cn/large/006tNbRwly1fwk9wdt1g0j31kw0hsq46.jpg)
 
 结论：
 

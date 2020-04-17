@@ -68,7 +68,7 @@ websocket-common-9.1.1.v20140108.jar
 
 #### 新建线程组
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1g33jr6kkbpj31cf0u041t.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jr6kkbpj31cf0u041t.jpg)
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1g33jrkpr17j31c00u0wfz.jpg)
 
@@ -76,7 +76,7 @@ websocket-common-9.1.1.v20140108.jar
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1g33jtgoqvaj31c50u0jvz.jpg)
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1g33jtywfkoj31c00u0q3w.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jtywfkoj31c00u0q3w.jpg)
 
 #### 添加 WebSocket Sampler 
 
@@ -86,7 +86,7 @@ websocket-common-9.1.1.v20140108.jar
 
 #### 添加查看结果树
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1g33jz01iugj31c90u0796.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jz01iugj31c90u0796.jpg)
 
 ![](https://ws2.sinaimg.cn/large/006tNc79ly1g33jzbna9tj31c00u0mym.jpg)
 
@@ -114,11 +114,11 @@ websocket-common-9.1.1.v20140108.jar
 
 * 在 chrome 的调试模式下可以找到 WebSocket 的连接信息：
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1g33kcqke41j31270u0jug.jpg) 
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33kcqke41j31270u0jug.jpg) 
 
 * 查看发送的信息内容，右键可以进行 copy 
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1g33kd4qmwuj312n0u0jt9.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33kd4qmwuj312n0u0jt9.jpg)
 
 * 根据上面的 ws 连接信息配置 WebSocket Sampler 
 
@@ -126,7 +126,7 @@ websocket-common-9.1.1.v20140108.jar
 
 ### 运行输出结果
 
-![](https://ws3.sinaimg.cn/large/006tNc79ly1g33kj3d58aj31c00u0gpd.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33kj3d58aj31c00u0gpd.jpg)
 
 ![](https://ws1.sinaimg.cn/large/006tNc79ly1g33kjivsklj31c00u0jt3.jpg)
 

@@ -53,7 +53,7 @@ object OperatorLearn extends App {
 ()  // 不知道为什么为多出一个来
 ```
 
-![map](https://ws3.sinaimg.cn/large/006tKfTcly1fndwbdcoq2j309u06a0sq.jpg)
+![map](https://tva2.sinaimg.cn/large/006tKfTcly1fndwbdcoq2j309u06a0sq.jpg)
 
 图中每个方框表示一个 RDD 分区，左侧的分区经过自定义函数 f:T->U 映射为右侧的新 RDD 分区。但是，实际只有等到 Action 算子触发后，这个 f 函数才会和其他函数在一个 stage 中对数据进行运算。
 
@@ -100,7 +100,7 @@ println(a.glom.collect.map{x => x.foreach(elem => print(elem + " ")); println})
 [Lscala.runtime.BoxedUnit;@78f4cff3
 ```
 
-![glom](https://ws3.sinaimg.cn/large/006tKfTcly1fndy4agwtej30ha08pt94.jpg)
+![glom](https://tva2.sinaimg.cn/large/006tKfTcly1fndy4agwtej30ha08pt94.jpg)
 
 上图中的方框代表一个分区。该图表示含有 V1、V2、V3 的分区通过函数 glom 形成一数组Array[(V1), (V2), (V3)]。
 
@@ -125,7 +125,7 @@ tiger
 ()
 ```
 
-![union](https://ws3.sinaimg.cn/large/006tKfTcly1fndyl01hf7j30a40fbdgb.jpg)
+![union](https://tva2.sinaimg.cn/large/006tKfTcly1fndyl01hf7j30a40fbdgb.jpg)
 
 上图中左侧大方框代表两个 RDD，大方框内的小方框代表 RDD 的分区。右侧大方框代表合并后的 RDD，大方框内的小方框代表分区。含有V1、V2、U1、U2、U3、U4 的 RDD 和含有V1、V8、U5、U6、U7、U8的 RDD 合并所有元素形成一个 RDD。V1、V1、V2、V8形成一个分区，U1、U2、U3、U4、U5、U6、U7、U8形成一个分区。
 
@@ -223,7 +223,7 @@ println(animal.distinct.collect.mkString(", "))
 rat, elephant, dog, salmon
 ```
 
-![distinct](https://ws3.sinaimg.cn/large/006tKfTcly1fne02bbemcj30c008aglt.jpg)
+![distinct](https://tva2.sinaimg.cn/large/006tKfTcly1fne02bbemcj30c008aglt.jpg)
 
 上图中的每个方框代表一个 RDD 分区，通过 distinct 函数，将数据去重。 例如，重复数据V1、 V1去重后只保留一份V1。
 
@@ -311,7 +311,7 @@ println(lenAnimal.mapValues("|" + _ + "|").collect.mkString(", "))
 (3,|dog|), (6,|salmon|), (6,|salmon|), (3,|rat|), (8,|elephant|)
 ```
 
-![mapValues](https://ws3.sinaimg.cn/large/006tKfTcly1fne139bx1rj30a00733ye.jpg)
+![mapValues](https://tva2.sinaimg.cn/large/006tKfTcly1fne139bx1rj30a00733ye.jpg)
 
 上图中的方框代表 RDD 分区。a=>a+2 代表对 (V1,1) 这样的 Key Value 数据对，数据只对 Value 中的 1 进行加 2 操作，返回结果为 3。
 

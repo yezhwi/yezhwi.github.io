@@ -35,7 +35,7 @@ SpringBoot 默认提供静态资源目录位置需置于 classpath 下（推荐�
 
 表示我们应该以什么样的路径模式来访问静态资源，即：只有静态资源满足什么样的匹配条件，Spring Boot 才会处理静态资源请求
 
-![](https://ws3.sinaimg.cn/large/006tNbRwly1fy0tqa03p2j31xs0lajtt.jpg)
+![](https://tva2.sinaimg.cn/large/006tNbRwly1fy0tqa03p2j31xs0lajtt.jpg)
 
 * spring.resources.static-locations
 
