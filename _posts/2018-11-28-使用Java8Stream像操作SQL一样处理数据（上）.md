@@ -58,7 +58,7 @@ List<Integer> transactionsIds =
 
 下图展示了 Java 8 的实现代码，首先，我们使用 stream() 函数从一个交易明细列表中获取一个 Stream 对象。接下来是一些操作（filter，sorted，map，collect）连接在一起形成了一个管道，**管道可以被看做是类似数据库查询数据的一种方式**。
 
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fxn1iqd8jkj30x20aa0td.jpg)
+![](https://tva2.sinaimg.cn/large/006tNbRwly1fxn1iqd8jkj30x20aa0td.jpg)
 
 **那么怎么处理并行代码呢**？在 Java 8 中非常简单：只需要使用 parallelStream() 取代 stream() 就可以了，如下面所示，Stream API 将在内部将你的查询条件分解应用到多核上。
 
@@ -90,7 +90,7 @@ Stream 操作还具备两个基本特性使它与集合操作不同：
 
 让我们再次看一下之前的代码的一些细节：
 
-![](https://ws1.sinaimg.cn/large/006tNbRwly1fxn1m7dm2wj30x00mu421.jpg)
+![](https://tva2.sinaimg.cn/large/006tNbRwly1fxn1m7dm2wj30x00mu421.jpg)
 
 我们首先通过 stream() 函数从一个交易列表中获取一个 Stream 对象。这个数据源是一个交易的列表，将会为 Stream 提供一系列元素。接下来，我们对 Stream 对象应用一些列的聚合操：filter（通过给定一个谓词来过滤元素），sorted（通过给定一个比较器实现排序），和 map(用于提取信息)。除了 collect 其他操作都会返回 Stream，这样就可以形成一个管道将它们连接起来，我们可以把这个链看做是一个对源的查询条件。
 

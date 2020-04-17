@@ -70,7 +70,7 @@ websocket-common-9.1.1.v20140108.jar
 
 ![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jr6kkbpj31cf0u041t.jpg)
 
-![](https://ws1.sinaimg.cn/large/006tNc79ly1g33jrkpr17j31c00u0wfz.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33jrkpr17j31c00u0wfz.jpg)
 
 #### 创建循环控制器
 
@@ -92,9 +92,9 @@ websocket-common-9.1.1.v20140108.jar
 
 #### 添加聚合报告
 
-![](https://ws1.sinaimg.cn/large/006tNc79ly1g33k0f4uwlj31cd0u0wjc.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33k0f4uwlj31cd0u0wjc.jpg)
 
-![](https://ws1.sinaimg.cn/large/006tNc79ly1g33k0vbqjtj31c00u0dhb.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33k0vbqjtj31c00u0dhb.jpg)
 
 #### 配置 WebSocket Sampler 
 
@@ -128,7 +128,7 @@ websocket-common-9.1.1.v20140108.jar
 
 ![](https://tva2.sinaimg.cn/large/006tNc79ly1g33kj3d58aj31c00u0gpd.jpg)
 
-![](https://ws1.sinaimg.cn/large/006tNc79ly1g33kjivsklj31c00u0jt3.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g33kjivsklj31c00u0jt3.jpg)
 
 ### 通过聚合报告看性能
 

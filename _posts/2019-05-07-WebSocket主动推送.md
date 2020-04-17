@@ -40,7 +40,7 @@ tags:
 	
 ### 服务端与客户端通信架构
 
-![](https://ws1.sinaimg.cn/large/006tNc79ly1g2rnwhopiyj30j40eit9k.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g2rnwhopiyj30j40eit9k.jpg)
 
 ### 技术选型
 

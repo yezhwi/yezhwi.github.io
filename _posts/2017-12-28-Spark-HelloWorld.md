@@ -27,7 +27,7 @@ tags:
 
 ### 创建一个maven-scala工程
 
-![maven-scala](https://ws1.sinaimg.cn/large/006tNc79ly1fmwg50t9taj30n30m976a.jpg)
+![maven-scala](https://tva2.sinaimg.cn/large/006tNc79ly1fmwg50t9taj30n30m976a.jpg)
 
 按向导一步步填写、下一步。
 

@@ -72,7 +72,7 @@ tags:
 
 Spark 应用程序被提交后，当某个动作算子触发了计算操作时，SparkContext 会向 DAGScheduler 提交一个作业，接着 DAGScheduler 会根据 RDD 生成的依赖关系划分 Stage，并决定各个 Stage 之间的依赖关系，Stage 之间的依赖关系就形成了 DAG。
 
-![](https://ws1.sinaimg.cn/large/006tKfTcly1fnd3l4sqwyj30if0csjs8.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1fnd3l4sqwyj30if0csjs8.jpg)
 
 在 Yarn-Cluster 模式中，当用户向 Yarn 中提交一个应用程序后， Yarn 将分两个阶段运行该应用程序：第一个阶段是把 Spark 的 Driver   作为一个 ApplicationMaster 在 Yarn 集群中先启动；第二个阶段是由 ApplicationMaster 创建应用程序，然后为它向 ResourceManager 申请资源，并启动 Executor 来运行 Task，同时监控它的整个运行过程，直到运行完成。 
 

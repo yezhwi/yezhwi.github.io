@@ -169,7 +169,7 @@ println(carRDD.collect.foreach(elem => elem match {
 ()
 ```
 
-![cartesian](https://ws1.sinaimg.cn/large/006tKfTcly1fndyya5jvvj30970cs3z9.jpg)
+![cartesian](https://tva2.sinaimg.cn/large/006tKfTcly1fndyya5jvvj30970cs3z9.jpg)
 
 上图中左侧大方框代表两个 RDD，大方框内的小方框代表 RDD 的分区。右侧大方框代表合并后的 RDD，大方框内的小方框代表分区。图中的大方框代表 RDD，大方框中的小方框代表 RDD 分区。例如：V1 和另一个 RDD 中的 W1、 W2、 Q5 进行笛卡尔积运算形成 (V1,W1)、(V1,W2)、 (V1,Q5)。
 
@@ -208,7 +208,7 @@ println(evenRDD.collect.mkString(", "))
 2, 4, 6, 8, 10
 ```
 
-![filter](https://ws1.sinaimg.cn/large/006tKfTcly1fndzwzishuj309a079mx0.jpg)
+![filter](https://tva2.sinaimg.cn/large/006tKfTcly1fndzwzishuj309a079mx0.jpg)
 
 上图中每个方框代表一个 RDD 分区，T 可以是任意的类型。通过自定义的过滤函数 f，对每个数据项操作，将满足条件、返回结果为 true 的数据项保留。例如，过滤掉 V2 和 V3 保留了 V1，为区分命名为 V'1。
 
@@ -270,7 +270,7 @@ println(a.takeSample(true, 5, 10).mkString(", "))
 9, 5, 7, 6, 8
 6, 8, 9, 5, 2
 ```
-![takeSample](https://ws1.sinaimg.cn/large/006tKfTcly1fne0onlhopj30cb094dg1.jpg)
+![takeSample](https://tva2.sinaimg.cn/large/006tKfTcly1fne0onlhopj30cb094dg1.jpg)
 
 上图中左侧的方框代表分布式的各个节点上的分区，右侧方框代表单机上返回的结果数组。 通过 takeSample 对数据采样，设置为采样一份数据，返回结果为V1。
 
@@ -332,7 +332,7 @@ println(lenRDD.reduceByKey(_ + _).collect.mkString(", "))
 (6,salmonsalmon), (3,dograt), (8,elephant)
 ```
 
-![reduceByKey](https://ws1.sinaimg.cn/large/006tNc79ly1fnerhsl86ej30mi0caq3p.jpg)
+![reduceByKey](https://tva2.sinaimg.cn/large/006tNc79ly1fnerhsl86ej30mi0caq3p.jpg)
 
 上图中的方框代表 RDD 分区。通过自定义函数 (A,B) => (A + B) 函数，将相同 key 的数据 (V1,2) 和 (V1,1) 的 value 相加运算，结果为（ V1,3）。
 
@@ -377,7 +377,7 @@ println(b.join(d).collect.mkString(", "))
 (6,(salmon,salmon)), (6,(salmon,rabbit)), (6,(salmon,turkey)), (6,(salmon,salmon)), (6,(salmon,rabbit)), (6,(salmon,turkey)), (3,(dog,dog)), (3,(dog,cat)), (3,(dog,gnu)), (3,(dog,bee)), (3,(rat,dog)), (3,(rat,cat)), (3,(rat,gnu)), (3,(rat,bee))
 ```
 
-![join](https://ws1.sinaimg.cn/large/006tNc79ly1fnerxby68wj30mt0fy40r.jpg)
+![join](https://tva2.sinaimg.cn/large/006tNc79ly1fnerxby68wj30mt0fy40r.jpg)
 
 上图中是对两个 RDD 的 join 操作示意图。大方框代表 RDD，小方框代表 RDD 中的分区。函数对相同 key 的元素，如 V1 为 key 做连接后结果为 (V1,(1,1)) 和 (V1,(1,2))。
 
@@ -403,7 +403,7 @@ println(b.rightOuterJoin(d).collect.mkString(", "))
 
 > foreach算子，通过自定义函数对每个数据项进行操作。对 RDD 中的每个元素都应用 f 函数操作，不返回 RDD 和 Array，而是返回Uint。
 
-![foreach](https://ws1.sinaimg.cn/large/006tNc79ly1fnes4irudfj308o06lq2s.jpg)
+![foreach](https://tva2.sinaimg.cn/large/006tNc79ly1fnes4irudfj308o06lq2s.jpg)
 
 上图中表示自定义函数为 println()，控制台打印所有数据项。
 

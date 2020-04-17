@@ -104,13 +104,13 @@ create index idx_userid_order_id_createdate on test_order(user_id,order_id,creat
 
 * **查询的列未被索引覆盖**，并且 where 筛选条件是索引的前导列，意味着用到了索引，但是部分字段未被索引覆盖，必须通过“**回表**”来实现，不是纯粹地用到了索引，也不是完全没用到索引，Extra 中为NULL(没有信息)
 
-![](https://ws1.sinaimg.cn/large/006tKfTcly1g1bht44949j30to04q3yg.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1g1bht44949j30to04q3yg.jpg)
 
 #### Using where
 
 * 查询的列未被索引覆盖，where 筛选条件非索引的前导列，Extra 中为 Using where
 
-![](https://ws1.sinaimg.cn/large/006tKfTcly1g1bhtm0alij30qf04u747.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1g1bhtm0alij30qf04u747.jpg)
 
 * 查询的列未被索引覆盖，where 筛选条件非索引列，Extra 中为 Using where
 
@@ -122,11 +122,11 @@ create index idx_userid_order_id_createdate on test_order(user_id,order_id,creat
 
 * 查询的列不全在索引中，where 条件中是一个前导列的范围
 
-![](https://ws1.sinaimg.cn/large/006tKfTcly1g1bhu9sbb6j30zv05jgll.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1g1bhu9sbb6j30zv05jgll.jpg)
 
 * 查询列不完全被索引覆盖，查询条件完全可以使用到索引（进行索引查找）
 
-![](https://ws1.sinaimg.cn/large/006tKfTcly1g1bhuid8f3j30vt04pt8o.jpg)　　
+![](https://tva2.sinaimg.cn/large/006tKfTcly1g1bhuid8f3j30vt04pt8o.jpg)　　
 
 参考：MySQL · 特性分析 · Index Condition Pushdown (ICP)
 using index conditoin 意味着查询列的某一部分无法直接使用索引

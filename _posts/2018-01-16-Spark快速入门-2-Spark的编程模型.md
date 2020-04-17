@@ -26,7 +26,7 @@ tags:
 
 ### Spark的编程模型
 
-![](https://ws1.sinaimg.cn/large/006tKfTcly1fndnl24uarj30ki0hkwp8.jpg)
+![](https://tva2.sinaimg.cn/large/006tKfTcly1fndnl24uarj30ki0hkwp8.jpg)
 
 * 示例
 

@@ -20,7 +20,7 @@ RESTful 是目前最流行的 API 设计规范，用于 Web 数据接口的设�
 
 它的大原则容易把握，但是细节不容易做对。本文总结 RESTful 的设计细节，介绍如何设计出易于理解和使用的 API。
 
-![](https://ws1.sinaimg.cn/large/006tNc79ly1g386v8u2unj30m80ajgmd.jpg)
+![](https://tva2.sinaimg.cn/large/006tNc79ly1g386v8u2unj30m80ajgmd.jpg)
 
 
 ### 一、URL 设计
