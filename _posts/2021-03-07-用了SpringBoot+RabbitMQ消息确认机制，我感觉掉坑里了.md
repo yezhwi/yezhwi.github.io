@@ -60,13 +60,21 @@ spring.RabbitMQ.port=5672
 spring.RabbitMQ.username=guest
 spring.RabbitMQ.password=guest
 # 发送者开启 confirm 确认机制
+
 spring.RabbitMQ.publisher-confirms=true
+
 # 发送者开启 return 确认机制
+
 spring.RabbitMQ.publisher-returns=true
+
 ####################################################
+
 # 设置消费端手动 ack
+
 spring.RabbitMQ.listener.simple.acknowledge-mode=manual
+
 # 是否支持重试
+
 spring.RabbitMQ.listener.simple.retry.enabled=true
 ```
 
