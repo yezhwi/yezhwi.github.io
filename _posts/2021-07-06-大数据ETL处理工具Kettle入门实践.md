@@ -136,4 +136,5 @@ Kettle 是纯 Java 编程的开源软件，需要安装 JDK，并配置环境变
 
 #### 分步操作一个 HelloWrold 过程
 
-![helloworld_compress](https://gitee.com/yzhw/img/raw/master/img/helloworld_compress.gif)
+
+<img src="https://gitee.com/yzhw/img/raw/master/img/helloworld_compress.gif" alt="helloworld" />
