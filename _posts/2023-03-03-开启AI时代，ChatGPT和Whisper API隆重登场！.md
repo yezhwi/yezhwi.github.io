@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      手把手教你完成 ChatGPT 注册
+title:      开启AI时代，ChatGPT和Whisper API隆重登场！
 subtitle:   
-date:       2023-02-04
+date:       2023-03-03
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
@@ -169,7 +169,7 @@ OpenAI 团队相信，AI 可以为所有人提供令人难以置信的机会和�
 
 ## 推荐阅读
 
-[不需要编写代码，也能成为Hive SQL面试高手？ChatGPT告诉你...](https://mp.weixin.qq.com/s/jRq8YqeVXrcNItFjK9-p2g)
-[ChatGPT 数据仓库实战：Kaggle 酒店入住数据分析与维度建模](https://mp.weixin.qq.com/s/TeWeJBPYKtABUN7HdtNQmQ)
-[OpenAI 快速入门（附代码）](https://mp.weixin.qq.com/s/rvVuVpkqqiiumCeYrMN4EQ)
+* [不需要编写代码，也能成为Hive SQL面试高手？ChatGPT告诉你...](https://mp.weixin.qq.com/s/jRq8YqeVXrcNItFjK9-p2g)
+* [ChatGPT 数据仓库实战：Kaggle 酒店入住数据分析与维度建模](https://mp.weixin.qq.com/s/TeWeJBPYKtABUN7HdtNQmQ)
+* [OpenAI 快速入门（附代码）](https://mp.weixin.qq.com/s/rvVuVpkqqiiumCeYrMN4EQ)
 
