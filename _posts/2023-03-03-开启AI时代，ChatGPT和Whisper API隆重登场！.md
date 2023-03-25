@@ -6,9 +6,10 @@ date:       2023-03-03
 author:     Yezhiwei
 header-img: img/WechatIMG38.jpeg
 catalog: true
-category: java
+category: AI
 tags:
     - ChatGPT
+    - AI
 ---
 
 ## 最新动态
